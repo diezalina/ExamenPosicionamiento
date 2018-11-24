@@ -10,7 +10,7 @@ acl.config({
     baseUrl:'/',
     defaultRole:'estudiante',
     decodedObjectName:'estudiante',
-    roleSearchPath:'estudiante'
+    roleSearchPath:'usuario.role'
 });
 
 router.use((req, res, next) => {
