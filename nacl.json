@@ -1,0 +1,15 @@
+[{
+    "group":"admin",
+    "permissions":[{
+        "resource":"*",
+        "methods":"*",
+        "action":"allow"
+    }]
+},{
+    "group":"estudiante",
+    "permissions":[{
+        "resource":"*",
+        "methods":"*",
+        "action":"allow"
+    }]
+}]
