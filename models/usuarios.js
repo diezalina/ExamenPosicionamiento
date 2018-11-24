@@ -12,7 +12,7 @@ var usuarioSchema = mongoose.Schema({
     a_materno: { type: String },
     role: { type: String },
     correo: { type: String },
-    telefono: { type: number }
+    telefono: { type: String }
 });
 
 var donothing = () =>{
