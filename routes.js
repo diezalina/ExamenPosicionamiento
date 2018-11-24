@@ -30,7 +30,7 @@ router.use((req, res, next) => {
 
 router.use(acl.authorize);
 
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
     res.render("index");
 });
 
