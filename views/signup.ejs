@@ -1,13 +1,13 @@
 <% include _header %>
 
-    <h1>Registro</h1>
+    <h1>Registrement</h1>
 
     <form action="/signup" method="post">
         <div class="form-group">
-            <input name="username" type="text" class="form-control" placeholder="Nombre de usuario" required autofocus/>
+            <input name="username" type="text" class="form-control" placeholder="Nom d'utilisateur" required autofocus/>
         </div>
         <div class="form-group">
-            <input name="password" type="password" class="form-control" placeholder="Contraseña" required/>
+            <input name="password" type="password" class="form-control" placeholder="Mot de passe" required/>
         </div>
         <div class="form-group">
             <label for="role">Seleccione su rol</label>
@@ -16,7 +16,7 @@
                 <option>estudiante</option>
             </select>
         </div>
-        <input type="submit" value="Registrarse" class="btn btn-primary btn-block" />
+        <input type="submit" value="S'inscrire" class="btn btn-primary btn-block" />
     </form>
 
     <% include _footer %>

@@ -12,4 +12,15 @@
         "methods":"*",
         "action":"allow"
     }]
+},{
+    "group":"usuario",
+    "permissions":[{
+        "resource":"/login",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },{
+        "resource":"/signup",
+        "methods":["GET","POST"],
+        "action":"allow"
+    }]
 }]

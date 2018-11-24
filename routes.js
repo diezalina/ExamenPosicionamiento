@@ -4,12 +4,12 @@ var Usuario = require("./models/usuarios");
 var passport = require("passport");
 var acl = require("express-acl");
 
-var route = express.Router();
+var router = express.Router();
 
 acl.config({
     baseUrl:'/',
-    defaultRole:'estudiante',
-    decodedObjectName:'estudiante',
+    defaultRole:'usuario',
+    decodedObjectName:'usuario',
     roleSearchPath:'usuario.role'
 });
 
