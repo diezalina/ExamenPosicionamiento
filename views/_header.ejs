@@ -2,43 +2,51 @@
 <html lang="en">
 
 <head>
-    <title>Zombie Nest </title>
+    <title>Alliance francaise</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="/scripts/weaboo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    </head>
 
 <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Zombie Nest</a>
+<header>
+<nav class="navbar navbar-static-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Niveau de francais</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+    <% if (currentUsuario) { %>
+    <li class="nav-item">
+        <a class="nav-link" href="/edit">
+            Welcome,
+            <%= currentUsuario.name() %> <span class="badge badge-pill badge-danger"><%= currentUsuario.usrRole() %></span>
+        </a>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Desconnecter</a>
+    </li>
+        <% } else { %>
+    <li class="nav-item">
+        <a class="nav-link" href="/login">Reconnecter</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/signup">S'inscrire</a>
+    </li>
+<% } %>
+  </div>
+  </header>
+</nav>
+    <div class="container">
+        <% errors.forEach(function(error){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <% if (currentZombie) { %>
-                    <li>
-                        <a href="/edit">
-                            Hola,
-                            <%= currentZombie.name() %>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/guns">Armamento</a>
-                    </li>
-                    <li>
-                        <a><span class="badge"> </span></a>
-                    </li>
-                    <li>
-                        <a href="/logout">Salir</a>
-                    </li>
-                    <% } else { %>
-                        <li>
-                            <a href="/login"> Entrar</a>
-                        </li>
-                        <li>
-                            <a href="/signup">Registrarse</a>
-                        </li>
-                        <% } %>
-            </ul>
-        </div>
-    </div>
+            <% }) %>
+                <% infos.forEach(function(info) { %>
+                    <div class="alert alert-info" role="alert">
+                        <%= info %>
+                    </div>
+                    <% }) %>
