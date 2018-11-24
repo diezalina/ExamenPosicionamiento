@@ -31,7 +31,7 @@ app.use(session({
 app.use(flash());
 
 app.use(passport.initialize({
-    userProperty: "zombie"
+    userProperty: "estudiante"
 }));
 app.use(passport.session());
 
