@@ -13,6 +13,7 @@ var passportsetup = require("./passportsetup");
 var app = express();
 
 mongoose.connect("mongodb://10am:alina10@ds261440.mlab.com:61440/examen-posicionamiento");
+//mongoose.connect("mongodb://localhost:27017/examen-posicionamiento");
 
 passportsetup();
 
@@ -31,7 +32,7 @@ app.use(session({
 app.use(flash());
 
 app.use(passport.initialize({
-    userProperty: "estudiante"
+    userProperty: "usuario"
 }));
 app.use(passport.session());
 
