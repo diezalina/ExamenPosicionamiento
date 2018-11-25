@@ -18,7 +18,7 @@ router.use((req, res, next) => {
     res.locals.errors = req.flash("error");
     res.locals.infos = req.flash("info");
     if(req.session.passport){
-        if(req.zombie){
+        if(req.usuario){
             req.session.role = req.usuario.role;
         } else {
             req.session.role = "estudiante";
