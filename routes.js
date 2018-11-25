@@ -21,7 +21,7 @@ router.use((req, res, next) => {
         if(req.usuario){
             req.session.role = req.usuario.role;
         } else {
-            req.session.role = "estudiante";
+            req.session.role = "usuario";
         }
     }
     console.log(req.session);

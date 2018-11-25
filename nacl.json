@@ -22,5 +22,9 @@
         "resource":"/signup",
         "methods":["GET","POST"],
         "action":"allow"
+    },{
+        "resource":"/logout",
+        "methods":"*",
+        "action":"allow"
     }]
 }]
