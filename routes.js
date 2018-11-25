@@ -68,11 +68,6 @@ router.post("/login", passport.authenticate("login",{
     failureFlash: true
 }));
 
-router.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
-});
-
 
 function ensureAuthenticated(req, res, next){
     if(req.isAuthenticated()){
