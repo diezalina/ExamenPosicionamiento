@@ -35,6 +35,11 @@ router.get("/",(req, res) => {
     res.render("index");
 });
 
+//signup
+router.get("/signup", (req, res, next) => {
+    res.render("signup");
+});
+
 router.post("/signup", (req,res,next) => {
     var username = req.body.username;
     var password = req.body.password;
@@ -58,6 +63,7 @@ router.post("/signup", (req,res,next) => {
     });
 });
 
+//login
 router.get("/login", (req, res) => {
     res.render("login");
 });
