@@ -1,0 +1,13 @@
+<% include _header %>
+<div class="container">
+    <% usuarios.forEach((usuario) => { %> 
+        <% if(usuario.role === "estudiante") { %> 
+            <div class="col-md-4">
+                <h4><a class="btn btn-outline-info btn-sm" href="/etudiantes/<%= usuario.username %>">
+                <% usuario.name() %>
+                </a></h4>
+            </div>
+        <% } %>
+    <% }) %>
+</div>
+<% include _footer %>

@@ -3,20 +3,57 @@
     <h1>Registrement</h1>
 
     <form action="/signup" method="post">
-        <div class="form-group">
-            <input name="username" type="text" class="form-control" placeholder="Nom d'utilisateur" required autofocus/>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        <label>Nom d'utilisateur</label>
+            <div class="form-group">
+                <input name="username" type="text" class="form-control" placeholder="Nom d'utilisateur" required autofocus/>
+            </div>
         </div>
-        <div class="form-group">
-            <input name="password" type="password" class="form-control" placeholder="Mot de passe" required/>
+        <div class="col-md-4">
+        <label>Mot de passe</label>
+            <div class="form-group">
+                <input name="password" type="password" class="form-control" placeholder="Mot de passe" required/>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="role">Seleccione su rol</label>
-            <select class="form-control" name="role" type="text">
-                <option>admin</option>
-                <option>estudiante</option>
-            </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        <label>Prénom</label>
+            <div class="form-group">
+                <input name="nombre" type="text" class="form-control" placeholder="Prénom" required/>
+            </div>
         </div>
+        <div class="col-md-4">
+        <label>Nom paternel</label>
+            <div class="form-group">
+                <input name="a_paterno" type="text" class="form-control" placeholder="Nom paternel" required/>
+            </div>
+        </div>
+        <div class="col-md-4">
+        <label>Nom maternel</label>
+            <div class="form-group">
+                <input name="a_materno" type="text" class="form-control" placeholder="Nom maternel"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        <label>Courrier électronique</label>
+            <div class="form-group">
+                <input name="correo" type="email" class="form-control" placeholder="Courrier électronique"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+        <label>Téléphone</label>
+            <div class="form-group">
+                <input name="telefono" type="text" class="form-control" placeholder="Téléphone"/>
+            </div>
+        </div>
+    </div>
         <input type="submit" value="S'inscrire" class="btn btn-primary btn-block" />
+    </div>
     </form>
 </div>
 <% include _footer %>

@@ -27,7 +27,7 @@ passport.use("login", new LocalStrategy(function(username, password, done){
                 return done(err);
             }
             if(isMatch){
-                return done(null, zombie);
+                return done(null, usuario);
             }else{
                 return done(null, false, {message:"Mot de passe invalide"});
             }

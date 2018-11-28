@@ -10,9 +10,20 @@ var usuarioSchema = mongoose.Schema({
     nombre: { type: String },
     a_paterno: { type: String },
     a_materno: { type: String },
-    role: { type: String },
+    dateRegistrement: { type: Date, default: Date.now },
     correo: { type: String },
-    telefono: { type: String }
+    telefono: { type: String },
+    role: { type: String, default: "estudiante"},
+    deb1: { type: Number },
+    deb2: { type: Number },
+    deb3: { type: Number },
+    inter1: { type: Number },
+    inter2: { type: Number },
+    inter3: { type: Number },
+    inter4: { type: Number },
+    avanc1: { type: Number },
+    avanc2: { type: Number },
+    avanc3: { type: Number }
 });
 
 var donothing = () =>{
@@ -53,7 +64,7 @@ usuarioSchema.methods.usrRole = function(){
 
 //Regresar el nombre
 usuarioSchema.methods.name = function(){
-    return this.username || (this.name + ' ' + this.a_paterno + ' ' + this.a_materno);
+    return this.username || (this.nombre + ' ' + this.a_paterno + ' ' + this.a_materno);
 }
 
 var Usuario = mongoose.model("Usuarios", usuarioSchema);
