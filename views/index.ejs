@@ -1,21 +1,23 @@
 <% include _header %>
-<div class="jumbotron">
-    <% if(currentUsuario) { %>
+<div class="container">
+    <% if(currentUsuario && currentUsuario.role !== "admin") { %>
         <% if(currentUsuario.resultado) { %> 
-            <div class="container">
-                <a class="btn btn-success-outline btn-lg" href="/etudiantes/<%= currentUsuario.username %>">Mis resultados</a>
+            <div class="jumbotron">
+                <a class="btn btn-outline-success btn-lg" href="/etudiantes/<%= currentUsuario.username %>">Mi nivel de ubicación</a>
             </div>
         <% } else { %>
-            <div class="container">
-                <a class="btn btn-danger-outline btn-lg" href="/inicio-examen">Iniciar examen</a>
+            <div class="jumbotron">
+                <h2>¡Cuidado!</h2>
+                <p class="lead">Una vez comenzado el examen solo se podrá presentar una vez, de tal modo se evita que se pueda hacer trampa o repetir el mismo examen dos veces.</p>
+                <a class="btn btn-outline-danger btn-lg" href="/inicio-examen">Iniciar examen</a>
             </div>
         <% } %>
-    <% } else { %>
+    <% } else if(!currentUsuario){ %>
         <div class="container">
-            <h1>Bienvenido!</h1>
             <div class="jumbotron">
+            <h1>Bienvenido!</h1>
             <h4>Por favor sigue las instrucciones a continuación</h4>
-            <ol>
+            <ol class="lead">
                 <li>Registrarse en el sistema. <i>Cuida la información que pones debido a que no podrá ser editada.</i></li>
                 <li>Iniciar sesión con tu usuario y contraseña.</li>
                 <li>Te aparecerá el enlace para realizar el examen, da clic para realizarlo.</li>
@@ -34,6 +36,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+    <% } else if(currentUsuario && currentUsuario.role === "admin") { %>
+        <div class="jumbotron">
+            <h1>Bienvenido administrador!</h1>
         </div>
     <% } %>
 </div>

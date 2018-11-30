@@ -21,22 +21,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if (currentUsuario) {%>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
-          <a class="dropdown-item" href="/inicio-examen">Examen</a>
-          <div class="dropwdown-divider"></div>
-          <a class="dropdown-item" href="/logout">Logout</a>
-        </div>
-      </li>
-        <% if(currentUsuario.role="admin") { %> 
-          <li>
-            <a class="nav-link" href="/etudiantes">Resultados estudiantes</a>
+        <% if(currentUsuario.role === "admin") { %> 
+            <li>
+              <a class="nav-link" href="/etudiantes">Listado de estudiantes</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/logout">Cerrar sesión</a>
+            </li>
+          <% } else { %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
+              <a class="dropdown-item" href="/inicio-examen">Examen</a>
+              <div class="dropwdown-divider"></div>
+              <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+            </div>
           </li>
-        <% } %>
+          <% } %>
       <% } else { %>
       <li class="nav-item">
         <a class="nav-link" href="/login">Se connecter</a>
