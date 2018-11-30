@@ -17,7 +17,7 @@ var app = express();
 mongoose.connect("mongodb://localhost:27017/examen-posicionamiento");
 
 var publicScript = path.join(__dirname,'scripts');
-app.use('./scripts', express.static(publicScript));
+app.use('/scripts', express.static(publicScript));
 
 var publicPath = path.join(__dirname,'public');
 app.use('/imgs', express.static(publicPath));

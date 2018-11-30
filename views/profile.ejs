@@ -1,0 +1,13 @@
+<% include _header %>
+
+<div class="jumbotron">
+    <h1 class="display-5"><%=usuario.name()%></h1>
+    <p class="lead"><b>Registrado el día: </b><%= usuario.dateRegistrement %></p>
+    <p class="lead"><b>Correo electrónico: </b><%= usuario.correo %></p>
+    <p class="lead"><b>Teléfono: </b><%= usuario.telefono %></p>
+    <% if(usuario.resultado) { %> 
+        <p class="lead"><b>Nivel de ubicación:</b> <%= usuario.resultado %></p>
+    <% } %>
+</div>
+
+<% include _footer %>

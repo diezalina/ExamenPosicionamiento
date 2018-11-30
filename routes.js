@@ -90,19 +90,37 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
 });
 
+router.get("/debutante-I",(req, res) => {
+    res.render("debutante-I-examen");
+});
+
 
 //listado de estudiantes
-router.get("/etudiantes", (req, res) => {
+router.get("/etudiantes", (req, res, next) =>{
     Usuario.find()
+        .sort({ dateRegistrement: "descending"})
         .exec((err, usuarios) => {
             if(err){
                 return next(err);
             }
-            res.render("etudiantes", { usuarios: usuarios});
+            res.render("etudiantes", {usuarios: usuarios});
         });
 });
 
+//acceder al perfil del alumno
+router.get("/etudiantes/:username",(req, res,next) =>{
+    Usuario.findOne( {username: req.params.username },(err,usuario) => {
+        if(err){
+            return next(err);
+        }
+        res.render("profile",{ usuario:usuario });
+    });
+});
 
+//acceder a examen a través del menú
+router.get("/inicio-examen",(req, res) => {
+    res.render("examen");
+});
 
 function ensureAuthenticated(req, res, next){
     if(req.isAuthenticated()){

@@ -23,7 +23,9 @@ var usuarioSchema = mongoose.Schema({
     inter4: { type: Number },
     avanc1: { type: Number },
     avanc2: { type: Number },
-    avanc3: { type: Number }
+    avanc3: { type: Number },
+    avanc4: { type: Number },
+    resultado: { type: String }
 });
 
 var donothing = () =>{
@@ -62,9 +64,20 @@ usuarioSchema.methods.usrRole = function(){
     return this.role;
 }
 
+
 //Regresar el nombre
 usuarioSchema.methods.name = function(){
-    return this.username || (this.nombre + ' ' + this.a_paterno + ' ' + this.a_materno);
+    return (this.nombre + ' ' + this.a_paterno + ' ' + this.a_materno);
+}
+
+//regresar telefono
+usuarioSchema.methods.telephone = function(){
+    return ('Téléphone: ' + this.telefono);
+}
+
+//regresar correo
+usuarioSchema.methods.email = function(){
+    return('E-mail: ' + this.correo);
 }
 
 var Usuario = mongoose.model("Usuarios", usuarioSchema);

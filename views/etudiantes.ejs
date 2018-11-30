@@ -1,11 +1,26 @@
 <% include _header %>
 <div class="container">
     <% usuarios.forEach((usuario) => { %> 
-        <% if(usuario.role === "estudiante") { %> 
-            <div class="col-md-4">
-                <h4><a class="btn btn-outline-info btn-sm" href="/etudiantes/<%= usuario.username %>">
-                <% usuario.name() %>
-                </a></h4>
+        <% if(usuario.role === "estudiante") { %>
+            <div class="jumbotron" id="marginStudent">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3><a class="btn btn-outline-info btn-lg" href="/etudiantes/<%= usuario.username %>">
+                        <%= usuario.name() %>
+                        </a></h3>
+                        <div class="row">
+                            <div class="col-md-5">
+                            <p><%= usuario.telephone() %></p>
+                            </div>
+                            <div class="col-md-5">
+                            <p><%= usuario.email() %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-outline-danger">Enviar resultados</a>
+                    </div>
+                </div>
             </div>
         <% } %>
     <% }) %>
