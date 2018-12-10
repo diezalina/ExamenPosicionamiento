@@ -1,10 +1,365 @@
 <% include _header %>
-
-<div class="container">
+<!--- container --->
+<div class="container" id="marginStudent">
     <h4>Débutante I</h4>
-    <form>
+    <form action="/debutante-I" method="POST">
+        <ol>
+            <b><li>Conjuguez les verbes au présent de l'indicatif.</li></b>
+            <br>
+            <!--- Col-6 --->
+            <div class="col-6">
 
+            <!--- primera pregunta --->
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Elles </label> 
+                    <input name="A1" type="text" class="form-control" placeholder="Manger">
+                    <label> dans le parc Tous les jours.</label>
+                </div>
+            </div>
+            <br>
+            
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Comment vous</label> 
+                    <input name="B1" type="text" class="form-control" placeholder="S'appeler">
+                    <label> Monsieur?</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Je </label>
+                    <input name="C1" type="text" class="form-control" placeholder="Chanter">
+                    <label> tous les jours dans un karaoké</label>
+                </div>
+            </div>
+            <br>
+            <!---- primera pregunta --->
+
+            <!---- segunda pregunta --->
+            <b><li>Choisissez la bonne conjugaison de "Être" ou "Avoir" au présent de l'indicatif.</li></b>
+            <br>
+
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Je</label>
+                    <select name="A2" class="form-control">
+                        <option selected value="suis">suis </option>
+                        <option value="ai">ai </option>
+                    </select>
+                    <label>japonaise.</label>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Il</label>
+                    <select name="B2" class="form-control">
+                        <option selected value="a">a </option>
+                        <option value="est">est </option>
+                    </select>
+                    <label>beaucoup d'enfants.</label>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Nous</label>
+                    <select name="C2" class="form-control">
+                        <option selected value="avons">avons </option>
+                        <option value="sommes">sommes </option>
+                    </select>
+                    <label>étudiantes.</label>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Ils</label>
+                    <select name="D2" class="form-control">
+                        <option selected value="ont">ont </option>
+                        <option value="sont">sont </option>
+                    </select>
+                    <label>des frères et soeurs.</label>
+                </div>
+            </div>
+            <!--- segunda pregunta --->
+            <br>
+            
+            <!--- Tercera pregunta --->
+            <b><li>Écrivez la nationalité de ces personnes.</li></b>
+            <br>
+            <ol type="A">
+                <li>L'Angleterre: il est ....</li>
+                <input name="A3" type="text" class="form-control" placeholder="Nationalité">
+                <li>Le Mexique: elle est .....</li>
+                <input name="B3" type="text" class="form-control" placeholder="Nationalité">
+                <li>L'Espagne: il est ....</li>
+                <input name="C3" type="text" class="form-control" placeholder="Nationalité">
+                <li>Les États-Unis: elle est ....</li>
+                <input name="D3" type="text" class="form-control" placeholder="Nationalité">
+                <br>
+            <!--- tercera pregunta --->
+            </ol>
+            
+            <!---- cuarta pregunta ---->
+            <b><li>Écrivez les números en toutes lettres:</li></b>
+            <br>
+                <!---- primera operacion---->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">49 + 10 = 59</span>
+                    </div>
+                    <input type="text" class="form-control" name="A41">+
+                    <input type="text" class="form-control" name="A42">=
+                    <input type="text" class="form-control" name="A43">
+                <!--- primera operacion ---->
+                </div>
+                <br>
+
+                <!---- segunda operacion ---->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">88 + 105 = 193</span>
+                    </div>
+                    <input type="text" class="form-control" name="B41">+
+                    <input type="text" class="form-control" name="B42">=
+                    <input type="text" class="form-control" name="B43">
+                <!----- segunda operacion ---->
+                </div>
+                <br>
+            <!--- cuarta pregunta --->
+
+            <!---- quinta pregunta ---->
+            <b><li>Choisissez la préposition correcte. </li></b>
+            <br>
+            <div class="form-inline">
+            <div class="form-group">
+                <label>Demain, je vais </label>
+                <select name="A5" class="form-control">
+                    <option selected value="au">au</option>
+                    <option value="en">en</option>
+                </select>
+                <label> après je pars </label>
+                <select name="B5" class="form-control">
+                    <option selected value="au">au</option>
+                    <option value="en">en</option>
+                </select>
+                <label>Portugal </label>
+                <select name="C5" class="form-control">
+                    <option selected value="à">à</option>
+                    <option value="en">en</option>
+                </select>
+                <label>Lisbonne et finalement je vais</label>
+                <select name="D5" class="form-control">
+                    <option selected value="aux">aux</option>
+                    <option value="au">au</option>
+                </select>
+                <label> Pays-Bas.</label>
+            <!---- form-group --->
+            </div>
+
+            <!---- form-inline ---->
+            </div>
+
+            <!--- quinta pregunta --->
+            
+            <!---- sexta pregunta --->
+            <br>
+            <b><li>Complétez en utilisant un adjectif possessif (regardez les indications entre parenthèses).</li></b>
+            <br>
+            <!---- 6A --->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Quelle est</span>
+                </div>
+                <input type="text" class="form-control" name="A6" placeholder="(vous)">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">nationalité?</span>
+                </div>
+            </div>
+            <br>
+            <!---- 6A ---->
+
+            <!---- 6B ---->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Comment s'apelle</span>
+                </div>
+                <input type="text" class="form-control" name="B6" placeholder="(tu)">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">père?</span>
+                </div>
+            </div>
+            <!----  6B ---->
+            
+            <br>
+            <!---- 6C ---->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Quelle est</span>
+                </div>
+                <input type="text" class="form-control" name="C6" placeholder="(nous)">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">passion?</span>
+                </div>
+            </div>
+            <!---- 6C ---->
+            <br>
+
+            <!---- 6D ---->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">C'est quoi </span>
+                </div>
+                <input type="text" class="form-control" name="D6" placeholder="(il)">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">rêve?</span>
+                </div>
+            </div>
+            <!---- sexta pregunta ---->
+            <br>
+
+            <!---- septima pregunta ---->
+            <b><li>Choisissez l'article dèfini ou indèfini selon le contexte.</li></b>
+            <br>
+            <div class="form-inline">
+            <div class="form-group">
+                <label>Dans </label>
+                <select name="A7" class="form-control">
+                    <option selected value="la">la</option>
+                    <option value="une">une</option>
+                </select>
+                <label> ville de Durango il y a </label>
+                <select name="B7" class="form-control">
+                    <option selected value="les">les</option>
+                    <option value="des">des</option>
+                </select>
+                <label>musées. </label>
+                <select name="C7" class="form-control">
+                    <option selected value="un">un</option>
+                    <option value="une">une</option>
+                </select>
+                <label>Téléphérique, </label>
+                <select name="D7" class="form-control">
+                    <option selected value="une">une</option>
+                    <option value="la">la</option>
+                </select>
+                <label> grande cathédrale.</label>
+            <!---- form-group --->
+            </div>
+
+            <!---- form-inline ---->
+            </div>
+            <!---- septima pregunta --->
+            <br>
+
+            <!---- octava pregunta --->
+            <b><li>Regardez le dessin et choisissez la bonne réponse:</li></b>
+            <p class="lead">À côte du / devant le / à droite / à gauche / entre / sur</p>
+            <img src="/imgs/DEBI-7.png">
+
+            
+            <div class="form-inline">
+                <!---- 8A ---->
+                <div class="form-group">
+                    <label>Le lapin est </label>
+                    <select name="A8" class="form-control">
+                        <option selected value="à côte dû">À côte dû</option>
+                        <option value="devant le">devant le</option>
+                    </select>
+                    <label>chat.</label>
+                </div>
+                </div>
+                <br>
+                <!---- 8A ---->
+                
+                <!---- 8B ---->
+            <div class="form-inline">
+                <div class="form-group">
+                    <label>Le cochon est </label>
+                    <select name="B8" class="form-control">
+                        <option selected value="à droite">À droite</option>
+                        <option value="à gauche">À gauche</option>
+                    </select>
+                    <label>du chat.</label>
+                </div>
+            </div>
+            <br>
+                <!---- 8B ---->
+                <!---- 8C ---->
+            <div class="form-inline">
+                <div class="form-group">
+                    <label>Le chat est</label>
+                    <select name="C8" class="form-control">
+                        <option selected value="entre">entre</option>
+                        <option value="sur">sur</option>
+                    </select>
+                    <label>le cochon et le lapin.</label>
+                </div>
+            </div>
+            <br>
+                <!---- 8C ----->
+            </div>
+            <!---- octava pregunta --->
+            <br>
+
+            <!--- novena pregunta --->
+            <b><li>Choisissez le bon adjectif possessif: vos/votre/leur/sa/notre/nos</li></b>
+            <br>
+            
+            <!--- 9A ---->
+            <div class="form-inline">
+                <div class="input-group">
+                    <label>Comment s'appelent </label>
+                    <select name="A9" class="form-control">
+                        <option selected value="vos">vos</option>
+                        <option value="votre">votre</option>
+                    </select>
+                    <label>enfants? (à vous)</label>
+                </div>
+            </div>
+            <!---- 9A --->
+            <br>
+
+            <!---- 9B ---->
+            <div class="form-inline">
+                <div class="input-group">
+                    <select name="B9" class="form-control">
+                        <option selected value="leur">leur</option>
+                        <option value="sa">sa</option>
+                    </select>
+                    <label>fille est très belle! (à ils, à elles)</label>
+                </div>
+            </div>
+            <!---- 9B ---->
+            <br>
+
+            <!---- 9C ---->
+            <div class="form-inline">
+                <div class="input-group">
+                    <select name="C9" class="form-control">
+                        <option selected value="notre">notre</option>
+                        <option value="nos">nos</option>
+                    </select>
+                    <label>voiture est trop vieille! (à nous)</label>
+                </div>
+            </div>
+            <!---- 9C ---->
+            <!---- novena pregunta --->
+
+        <!--- examen --->
+        </ol>
+        
+        <!---- col-6 --->
+        </div>
+        <input type="submit" value="Siguiente" class="btn btn-success btn-lg" />
     </form>
+<!--- container --->
 </div>
 
 <% include _footer %>
