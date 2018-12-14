@@ -1,13 +1,16 @@
 <% include _header %>
 
+<form method="POST" action="pdfMake/pdf">
 <div class="jumbotron">
-    <h1 class="display-5"><%=usuario.name()%></h1>
+    <h1 class="display-5" name="nombre"><%=usuario.name()%></h1>
     <p class="lead"><b>Registrado el día: </b><%= usuario.dateRegistrement %></p>
     <p class="lead"><b>Correo electrónico: </b><%= usuario.correo %></p>
     <p class="lead"><b>Teléfono: </b><%= usuario.telefono %></p>
     <% if(usuario.resultado) { %> 
-        <p class="lead"><b>Nivel de ubicación:</b> <%= usuario.resultado %></p>
+        <p class="lead" name="resultados"><b>Nivel de ubicación:</b> <%= usuario.resultado %></p>
     <% } %>
 </div>
+<button class="btn btn-outline-primary" type="submit">Generar PDF</button>
+</form>
 
 <% include _footer %>

@@ -2,6 +2,7 @@
 <!--- container --->
 <div class="container" id="marginStudent">
     <h4>Débutante I</h4>
+    <% if(!currentUsuario.deb1) { %> 
     <form action="/debutante-I" method="POST">
         <ol>
             <b><li>Conjuguez les verbes au présent de l'indicatif.</li></b>
@@ -359,6 +360,16 @@
         </div>
         <input type="submit" value="Siguiente" class="btn btn-success btn-lg" />
     </form>
+    <% } else { %>
+        <h1>Ya presentaste este nivel</h1>
+        <% if(currentUsuario.deb1 >= 24) { %>
+            <a class="btn btn-outline-success" href="debutante-II">Continuar en Débutante II</a>
+            <br>
+        <% } else { %> 
+            <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
+            <br>
+        <% } %>
+    <% } %>
 <!--- container --->
 </div>
 

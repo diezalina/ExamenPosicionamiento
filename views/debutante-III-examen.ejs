@@ -1,0 +1,95 @@
+<% include _header %>
+    <div class="container" id="marginStudent">
+        <h4>Débutante III</h4>
+        <% if(!currentUsuario.deb3) { %> 
+            <form action="/debutante-III" method="POST">
+                <ol>
+                    <!--- primera pregunta-->
+                    <b><li>Choissisez le mot qui corresponde aux images</li></b>
+                    <div class="form-inline">
+                        <img src="/imgs/foot.png">
+                        <img src="/imgs/arm.png">
+                        <img src="/imgs/teeth.png">
+                        <img src="/imgs/hand.png">
+                    </div>
+                    <div class="form-inline">
+                        <div class="input-group">
+                            <select name="A1" class="form-control">
+                                <option selected value="le pied">Le pied</option>
+                                <option value="la jambe">La jambe</option>
+                            </select>
+                            <label id="labId">-----</label>
+                            <select name="B1" class="form-control">
+                                <option selected value="le bras">Le bras</option>
+                                <option value="le main">Le main</option>
+                            </select>
+                            <label id="labId">----</label>
+                            <select name="C1" class="form-control">
+                                <option selected value="les joues">Les joues</option>
+                                <option value="les dents">Les dents</option>
+                            </select>
+                            <label id="labId">---</label>
+                            <select name="D1" class="form-control">
+                                <option selected value="la main">La main</option>
+                                <option value="le pied">Le pied</option>
+                            </select>
+                        </div>
+                    </div>
+
+                <br>
+                <!--- Segunda pregunta -->
+                <b><li>Regardez les images et choisissez la bonne réponse: L'hiver/ le printemps/ l'été / l'automne</li></b>
+                    <div class="form-inline">
+                        <img src="/imgs/autumn.png">
+                        <label id="labId">---</label>
+                        <img src="/imgs/beach.png">
+                        <label id="labId">---</label>
+                        <img src="/imgs/spring.png">
+                        <label id="labId">---</label>
+                        <img src="/imgs/snowman.png">
+                    </div>
+                    <div class="form-inline">
+                        <div class="input-group">
+                            <select name="A2" class="form-control">
+                                <option selected value="A">L'hiver</option>
+                                <option value="B">Le printemps</option>
+                                <option value="C">L'été</option>
+                                <option value="D">L'automne</option>
+                            </select>
+                            <label id="labId">--</label>
+                            <select name="B2" class="form-control">
+                                <option selected value="A">L'hiver</option>
+                                <option value="B">Le printemps</option>
+                                <option value="C">L'été</option>
+                                <option value="D">L'automne</option>
+                            </select>
+                            <label id="labId">--</label>
+                            <select name="C2" class="form-control">
+                                <option selected value="A">L'hiver</option>
+                                <option value="B">Le printemps</option>
+                                <option value="C">L'été</option>
+                                <option value="D">L'automne</option>
+                            </select>
+                            <label id="labId">--</label>
+                            <select name="D2" class="form-control">
+                                <option selected value="A">L'hiver</option>
+                                <option value="B">Le printemps</option>
+                                <option value="C">L'été</option>
+                                <option value="D">L'automne</option>
+                            </select>
+                        </div>
+                    </div>
+
+                <br>
+                <!--- Tercera pregunta -->
+                <b><li>Dites dans chaque phrase si <b>on</b> signifie: Les gens ou nous</li></b>
+                   <!--- A3 -->
+                    
+
+                </ol>
+            </form>
+        <% } else { %>
+
+        <% } %>
+    </div>
+<% include _footer %>

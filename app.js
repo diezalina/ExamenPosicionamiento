@@ -13,8 +13,8 @@ var routes = require("./routes");
 var passportsetup = require("./passportsetup");
 var app = express();
 
-//mongoose.connect("mongodb://10am:alina10@ds261440.mlab.com:61440/examen-posicionamiento");
-mongoose.connect("mongodb://localhost:27017/examen-posicionamiento");
+mongoose.connect("mongodb://10am:alina10@ds261440.mlab.com:61440/examen-posicionamiento");
+//mongoose.connect("mongodb://localhost:27017/examen-posicionamiento");
 
 var publicScript = path.join(__dirname,'scripts');
 app.use('/scripts', express.static(publicScript));
