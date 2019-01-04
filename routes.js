@@ -524,7 +524,7 @@ router.post("/debutante-II", ensureAuthenticated,(req, res) => {
     console.log(deb2);
     req.usuario.deb2 = deb2;
     if(deb2 < 35){
-        req.usuario.resultado = "Debutante I: Entre Nous 4, 5 et 6.";
+        req.usuario.resultado = "Debutante II: Entre Nous 4, 5 et 6.";
     }
     req.usuario.save((err) => {
         if(err){
@@ -548,7 +548,178 @@ router.get("/debutante-III",(req, res) => {
 });
 
 router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
+    var A1 = req.body.A1;
+    var B1 = req.body.B1;
+    var C1 = req.body.C1;
+    var D1 = req.body.D1;
+    var A2 = req.body.A2;
+    var B2 = req.body.B2;
+    var C2 = req.body.C2;
+    var D2 = req.body.D2;
+    var A3 = req.body.A3;
+    var B3 = req.body.B3;
+    var A4 = req.body.A4.toLowerCase();
+    var B4 = req.body.B4.toLowerCase();
+    var C4 = req.body.C4.toLowerCase();
+    var D4 = req.body.D4.toLowerCase();
+    var E4 = req.body.E4.toLowerCase();
+    var F4 = req.body.F4;
+    var G4 = req.body.G4;
+    var H4 = req.body.H4;
+    var I4 = req.body.I4;
+    var A5 = req.body.A5;
+    var B5 = req.body.B5;
+    var C5 = req.body.C5;
+    var A6 = Boolean(req.body.A6);
+    var B6 = Boolean(req.body.B6);
+    var C6 = Boolean(req.body.C6);
+    var A7 = req.body.A7;
+    var B7 = req.body.B7;
+    var C7 = req.body.C7;
+    var D7 = req.body.D7;
+    var A8 = req.body.A8.toLowerCase();
+    var B8 = req.body.B8.toLowerCase();
+    var C8 = req.body.C8.toLowerCase();
+    var A9 = req.body.A9;
+    var B9 = req.body.B9;
+    var A10 = req.body.A10.toLowerCase();
+    var B10 = req.body.B10.toLowerCase();
+    var A11 = req.body.A11.toLowerCase();
+    var deb3 = 0;
+    if( A1 === "le pied"){
+        deb3++;
+    }
+    if(B1 === "le bras"){
+        deb3++;
+    }
+    if(C1 === "les dents"){
+        deb3++;
+    }
+    if(D1 === "la main"){
+        deb3++;
+    }
+    if(A2 === "D"){
+        deb3++;
+    }
+    if(B2 === "C"){
+        deb3++;
+    }
+    if(C2 === "B"){
+        deb3++;
+    }
+    if(D2 === "A"){
+        deb3++;
+    }
+    if(A3 === "les gens"){
+        deb3++;
+    }
+    if(B3 === "nous"){
+        deb3++;
+    }
+    if(A4 === "des"){
+        deb3++;
+    }
+    if(B4 === "du"){
+        deb3++;
+    }
+    if(C4 === "de la"){
+        deb3++;
+    }
+    if(D4 === "de"){
+        deb3++;
+    }
+    if(E4 === "de"){
+        deb3++;
+    }
+    if(F4 === "du"){
+        deb3++;
+    }
+    if(G4 === "de la"){
+        deb3++;
+    }
+    if(H4 === "du"){
+        deb3++;
+    }
+    if(I4 === "des"){
+        deb3++;
+    }
+    if(A5 === "les"){
+        deb3++;
+    }
+    if(B5 === "l'"){
+        deb3++;
+    }
+    if(C5 === "la"){
+        deb3++;
+    }
+    if(A6 === true){
+        deb3++;
+    }
+    if(B6 === true){
+        deb3++;
+    }
+    if(C6 === true){
+        deb3++;
+    }
+    if(A7 === "des"){
+        deb3++;
+    }
+    if(B7 === "des"){
+        deb3++;
+    }
+    if(C7 === "une"){
+        deb3++;
+    }
+    if(D7 === "chez"){
+        deb3++;
+    }
+    if(A8 === "devez"){
+        deb3++;
+    }
+    if(B8 === "pouvons"){
+        deb3++;
+    }
+    if(C8 === "veux"){
+        deb3++;
+    }
+    if(A9 === "blanche"){
+        deb3++;
+    }
+    if(B9 === "bleus"){
+        deb3++;
+    }
+    if(A10 === "mets"){
+        deb3++;
+    }
+    if(B10 === "écoutez"){
+        deb3++;
+    }
+    if(A11 === "je vais acheter une robe"){
+        deb3++;
+    }
+    console.log(deb3);
+    req.usuario.deb3 = deb3;
+    if(deb3 < 26){
+        req.usuario.resultado = "Debutante III: Entre Nous 7 et 8.";
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/debutante-III-resultado");
+    });
 
+});
+
+//Resultados deb III
+router.get("/debutante-III-resultado",(req, res) => {
+    res.render("debutante-III-resultado");
+});
+
+//Int I
+router.get("/intermedio-I",(req,res) => {
+    res.render("intermedio-I-examen");
 });
 
 //listado de estudiantes
