@@ -8,6 +8,8 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
+var PDF = require('pdfkit');
+var fs = require('fs');
 
 var routes = require("./routes");
 var passportsetup = require("./passportsetup");
@@ -21,6 +23,9 @@ app.use('/scripts', express.static(publicScript));
 
 var publicPath = path.join(__dirname,'public');
 app.use('/imgs', express.static(publicPath));
+
+var pdfPath = path.join(__dirname,'PDF');
+app.use('/docs', express.static(pdfPath));
 
 passportsetup();
 

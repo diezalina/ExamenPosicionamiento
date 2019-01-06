@@ -3,8 +3,10 @@ var Usuario = require("./models/usuarios");
 
 var passport = require("passport");
 var acl = require("express-acl");
+var PDF = require("pdfkit");
+var fs = require("fs");
 
-
+var doc = new PDF();
 var router = express.Router();
 
 acl.config({
@@ -95,8 +97,10 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
 });
 //------------------------------//
-//          debutante I         //
+//          EXAMENES            //
 //------------------------------//
+
+//DEBUTANTE I
 router.get("/debutante-I",(req, res) => {
     res.render("debutante-I-examen");
 });
@@ -247,7 +251,7 @@ router.post("/debutante-I", ensureAuthenticated,(req,res,next) => {
     console.log(deb1);
     req.usuario.deb1 = deb1;
     if(deb1 < 24){
-        req.usuario.resultado = "Debutante I: Entre Nous 1, 2 et 3.";
+        req.usuario.resultado = "Débutante I: Entre Nous I (1, 2 et 3).";
     }
     req.usuario.save((err) => {
         if(err){
@@ -323,208 +327,158 @@ router.post("/debutante-II", ensureAuthenticated,(req, res) => {
     var deb2 = 0;
     if(A1 === "descends"){
         deb2++;
-        console.log("A1");
     }
     if(B1 === "prends"){
         deb2++;
-        console.log("B1");
     }
     if(C1 === "vas"){
         deb2++;
-        console.log("C1");
     }
     if(A2 === "cet"){
         deb2++;
-        console.log("A2");
     }
     if(B2 === "cette"){
         deb2++;
-        console.log("B2");
     }
     if(C2 === "ces"){
         deb2++;
-        console.log("C2");
     }
     if(D2 === "ce"){
         deb2++;
-        console.log("D2");
     }
     if(A3 === "fais"){
         deb2++;
-        console.log("A3");
     }
     if(B3 === "te réveilles"){
         deb2++;
-        console.log("B3");
     }
     if(C3 === "se couche"){
         deb2++;
-        console.log("C3");
     }
     if(D3 === "écrivons"){
         deb2++;
-        console.log("D3");
     }
     if(E3 === "venez"){
         deb2++;
-        console.log("E3");
     }
     if(F3 === "savent"){
         deb2++;
-        console.log("F3");
     }
     if(A41 === "au"){
         deb2++;
-        console.log("A41");
     }
     if(A42 === "à la"){
         deb2++;
-        console.log("A42");
     }
     if(A43 === "à l'"){
         deb2++;
-        console.log("A43");
     }
     if(B41 === "du"){
         deb2++;
-        console.log("B41");
     }
     if(B42 === "de la"){
         deb2++;
-        console.log("b42");
     }
     if(B43 === "de l'"){
         deb2++;
-        console.log("b43");
     }
     if(A5 === "belle"){
         deb2++;
-        console.log("a5");
     }
     if(B5 === "cultivée"){
         deb2++;
-        console.log("b5");
     }
     if(C5 === "généreuse"){
         deb2++;
-        console.log("c5");
     }
     if(A6 === "B"){
         deb2++;
-        console.log("a6");
     }
     if(B6 === "B"){
         deb2++;
-        console.log("b6");
     }
     if(A71 === "suis"){
         deb2++;
-        console.log("a71");
     }
     if(A72 === "ai"){
         deb2++;
-        console.log("a72");
     }
     if(B71 === "ai"){
         deb2++;
-        console.log("b71");
     }
     if(B72 === "ai"){
         deb2++;
-        console.log("b72");
     }
     if(A8 === "vécu" || "vecu"){
         deb2++;
-        console.log("a8");
     }
     if(B8 === "pris"){
         deb2++;
-        console.log("b8");
     }
     if(C8 === "étudié"){
         deb2++;
-        console.log("c8");
     }
     if(D8 === "fait"){
         deb2++;
-        console.log("d8");
     }
     if(A9 === "je ne suis pas partie"){
         deb2++;
-        console.log("a9");
     }
     if(B9 === "nous n'avons pas couru"){
         deb2++;
-        console.log("b9");
     }
     if(A10 === "A"){
         deb2++;
-        console.log("a10");
     }
     if(B10 === "C"){
         deb2++;
-        console.log("b10");
     }
     if(C10 === "D"){
         deb2++;
-        console.log("c10");
     }
     if(D10 === "B"){
         deb2++;
-        console.log("d10");
     }
     if(A11 === "blonde"){
         deb2++;
-        console.log("a11");
     }
     if(A12 === "B"){
         deb2++;
-        console.log("a12");
     }
     if(B12 === "A"){
         deb2++;
-        console.log("b12");
     }
     if(C12 === "A"){
         deb2++;
-        console.log("c12");
     }
     if(D12 === "B"){
         deb2++;
-        console.log("D12");
     }
     if(E12 === "A"){
         deb2++;
-        console.log("e12");
     }
     if(A13 === "qui"){
         deb2++;
-        console.log("a13");
     }
     if(B13 === "que"){
         deb2++;
-        console.log("b13");
     }
     if(A14 === "il y a"){
         deb2++;
-        console.log("a14");
     }
     if(B14 === "depuis"){
         deb2++;
-        console.log("b14");
     }
     if(A15 === "A"){
         deb2++;
-        console.log("a15");
     }
     if(B15 === "C"){
         deb2++;
-        console.log("b15");
     }
     console.log(deb2);
     req.usuario.deb2 = deb2;
     if(deb2 < 35){
-        req.usuario.resultado = "Debutante II: Entre Nous 4, 5 et 6.";
+        req.usuario.resultado = "Débutante II: Entre Nous I (4, 5 et 6).";
     }
     req.usuario.save((err) => {
         if(err){
@@ -700,7 +654,7 @@ router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
     console.log(deb3);
     req.usuario.deb3 = deb3;
     if(deb3 < 26){
-        req.usuario.resultado = "Debutante III: Entre Nous 7 et 8.";
+        req.usuario.resultado = "Débutante III: Entre Nous I (7 et 8).";
     }
     req.usuario.save((err) => {
         if(err){
@@ -722,6 +676,134 @@ router.get("/intermedio-I",(req,res) => {
     res.render("intermedio-I-examen");
 });
 
+router.post("/intermedio-I",ensureAuthenticated,(req,res,next) => {
+    var A1 = req.body.A1.toLowerCase();
+    var B1 = req.body.B1.toLowerCase();
+    var C1 = req.body.C1.toLowerCase();
+    var A2 = req.body.A2.toLowerCase();
+    var B2 = req.body.B2.toLowerCase();
+    var A3 = req.body.A3;
+    var B3 = req.body.B3;
+    var C3 = req.body.C3;
+    var A4 = req.body.A4.toLowerCase();
+    var B4 = req.body.B4.toLowerCase();
+    var C4 = req.body.C4.toLowerCase();
+    var D4 = req.body.D4.toLowerCase();
+    var A5 = req.body.A5;
+    var B5 = req.body.B5;
+    var C5 = req.body.C5;
+    var D5 = req.body.D5;
+    var A6 = req.body.A6;
+    var B6 = req.body.B6;
+    var C6 = req.body.C6;
+    var A7 = req.body.A7;
+    var B7 = req.body.B7;
+    var A8 = req.body.A8;
+    var B8 = req.body.B8;
+    var int1 = 0;
+    if(A1 === "j'y vais"){
+        int1++;
+    }
+    if(B1 === "nous y allons"){
+        int1++;
+    }
+    if(C1 === "je n'y pars pas"){
+        int1++;
+    }
+    if(A2 === "leur"){
+        int1++;
+    }
+    if(B2 === "lui"){
+        int1++;
+    }
+    if(A3 === "plus"){
+        int1++;
+    }
+    if(B3 === "encore"){
+        int1++;
+    }
+    if(C3 === "pas"){
+        int1++;
+    }
+    if(A4 === "étais"){
+        int1++;
+    }
+    if(B4 === "allais"){
+        int1++;
+    }
+    if(C4 === "dormais"){
+        int1++;
+    }
+    if(D4 === "partions"){
+        int1++;
+    }
+    if(A5 === "meilleure"){
+        int1++;
+    }
+    if(B5 === "mieux"){
+        int1++;
+    }
+    if(C5 === "plus de"){
+        int1++;
+    }
+    if(D5 === "moins de"){
+        int1++;
+    }
+    if(A6 === "leur"){
+        int1++;
+    }
+    if(B6 === "les"){
+        int1++;
+    }
+    if(C6 === "me"){
+        int1++;
+    }
+    if(A7 === "A"){
+        int1++;
+    }
+    if(B7 === "B"){
+        int1++;
+    }
+    if(A8 === "la plupart"){
+        int1++;
+    }
+    if(B8 === "quelques-uns"){
+        int1++;
+    }
+    console.log(int1);
+    req.usuario.inter1 = int1;
+    if(int1 < 16){
+        req.usuario.resultado = "Intermédiaire I: Entre Nous II (1, 2 et 3).";
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/intermedio-I-resultado");
+    });
+
+});
+
+// resultado INTERMEDIO I
+router.get("/intermedio-I-resultado",(req,res) => {
+    res.render("intermedio-I-resultado");
+});
+
+//intermedio II
+router.get("/intermedio-II",(req, res) => {
+    res.render("intermedio-II-examen");
+});
+
+
+// intermedio III
+router.get("/intermedio-III",(req,res)=>{
+    res.render("intermedio-III-examen");
+});
+
+//---------------------------------------//
+//           PDF - LISTADO               //
+//---------------------------------------//
 //listado de estudiantes
 router.get("/etudiantes", (req, res, next) =>{
     Usuario.find()
@@ -742,6 +824,33 @@ router.get("/etudiantes/:username",(req, res,next) =>{
         }
         res.render("profile",{ usuario:usuario });
     });
+});
+
+//sacar PDF del perfil
+router.post("/etudiantes/:username", (req, res, next) => {
+
+    var nombre = req.body.nombre;
+    var correo = req.body.correo;
+    var resultado = req.body.resultado;
+    var telefono = req.body.telefono;
+    //console.log(prueba);
+    //console.log(nombre);
+    doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + telefono + '-resultado' +'.pdf'));    
+    doc.image('public/pdf-logo.jpg', 0, 0)
+        .fontSize(23)
+        .font('public/fonts/ariali.ttf')
+        .text(nombre, 50, 300);
+
+    doc.fontSize(12)
+        .font('public/fonts/verdana.ttf')
+        .text('Correo electrónico: ' + correo, 50, 325)
+        .text('Télefono: ' + telefono, 50, 340);
+    
+    doc.fontSize(18)
+        .font('public/fonts/ariali.ttf')
+        .text(resultado, 150, 370);
+    doc.end();
+    
 });
 
 //acceder a examen a través del menú

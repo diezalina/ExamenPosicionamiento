@@ -2,7 +2,7 @@
 
 <div class="container" id="marginStudent">
     <h4>Intermedio I</h4>
-    <% if(!currentUsuario.int1) { %> 
+    <% if(!currentUsuario.inter1) { %> 
         <form action="/intermedio-I" method="POST">
             <ol>
                 <br>
@@ -173,7 +173,7 @@
                             <option value="te">te</option>
                             <option value="la">la</option>
                             <option value="le">le</option>
-                            <opton value="les">les</opton>
+                            <option value="les">les</option>
                             <option value="l'">l'</option>
                             <option value="nous">nous</option>
                             <option value="vous">vous</option>
@@ -186,7 +186,7 @@
                                 <option value="te">te</option>
                                 <option value="la">la</option>
                                 <option value="le">le</option>
-                                <opton value="les">les</opton>
+                                <option value="les">les</option>
                                 <option value="l'">l'</option>
                                 <option value="nous">nous</option>
                                 <option value="vous">vous</option>
@@ -199,7 +199,7 @@
                                 <option value="te">te</option>
                                 <option value="la">la</option>
                                 <option value="le">le</option>
-                                <opton value="les">les</opton>
+                                <option value="les">les</option>
                                 <option value="l'">l'</option>
                                 <option value="nous">nous</option>
                                 <option value="vous">vous</option>
@@ -269,7 +269,7 @@
         </form>
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.int1 >= 24) { %>
+        <% if(currentUsuario.inter1 >= 16) { %>
             <a class="btn btn-outline-success" href="intermedio-II">Continuar en Intermedio II</a>
             <br>
         <% } else { %> 

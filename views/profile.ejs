@@ -1,16 +1,49 @@
 <% include _header %>
 
-<form method="POST" action="pdfMake/pdf">
+<form method="POST" action="/etudiantes/:username">
 <div class="jumbotron">
-    <h1 class="display-5" name="nombre"><%=usuario.name()%></h1>
-    <p class="lead"><b>Registrado el día: </b><%= usuario.dateRegistrement %></p>
-    <p class="lead"><b>Correo electrónico: </b><%= usuario.correo %></p>
-    <p class="lead"><b>Teléfono: </b><%= usuario.telefono %></p>
-    <% if(usuario.resultado) { %> 
-        <p class="lead" name="resultados"><b>Nivel de ubicación:</b> <%= usuario.resultado %></p>
+    <% if(currentUsuario) { %>
+        <% if(currentUsuario.role === "admin") { %>
+            <fieldset>
+            <h1 class="display-4">Datos del alumno</h1>
+            <b><p class="lead">Nombre completo: </b>
+            <input class="form-control display-5" name="nombre" type="text" value="<%=usuario.name()%>"></p>
+            <p class="lead"><b>Registrado el día: </b>
+            <input class="form-control display-5" name="registro" type="text" value="<%= usuario.dateRegistrement %>"></p>
+            <p class="lead"><b>Correo electrónico: </b><input class="form-control" name="correo" value="<%=usuario.correo%>"></p>
+            <p class="lead"><b>Teléfono: </b><input class="form-control" name="telefono" value="<%= usuario.telefono %>"></p>
+            <% if(usuario.resultado) { %>
+                <p class="lead"><b>Nivel de ubicación:</b><input class="form-control" name="resultado" value="<%= usuario.resultado %>"></p>
+                <% if(usuario.resultado==="Debutante I: Entre Nous 1, 2 et 3.") { %>
+                    <div class="col-4">
+                        <div class="row">
+                            <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/35"></p>
+                        </div>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Debutante II: Entre Nous 4, 5 et 6.") { %>
+                    <div class="col-4">
+                        <div class="row">
+                            <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/35"></p>
+                            <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/50"></p>
+                        </div>
+                    </div>
+                <% } %>
+                <button class="btn btn-outline-primary" type="submit">Generar PDF</button>
+            <% } %>
+            </fieldset>
+        <% } else { %>
+            <h1 class="display-5" name="nombre"><%=usuario.name()%></h1>
+            <p class="lead"><b>Registrado el día: </b><%= usuario.dateRegistrement %></p>
+            <p class="lead"><b>Correo electrónico: </b><%= usuario.correo %></p>
+            <p class="lead"><b>Teléfono: </b><%= usuario.telefono %></p>
+            <% if(usuario.resultado) { %> 
+                <p class="lead" name="resultados"><b>Nivel de ubicación:</b> <%= usuario.resultado %></p>
+            <% } %>
+        <% } %>
     <% } %>
 </div>
-<button class="btn btn-outline-primary" type="submit">Generar PDF</button>
+
 </form>
 
 <% include _footer %>

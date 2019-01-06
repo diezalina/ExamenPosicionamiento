@@ -1,0 +1,186 @@
+<% include _header %>
+
+<div class="container" id="marginStudent">
+    <h4>Intermedio II</h4>
+    <% if(!currentUsuario.inter2) { %>
+        <form action="/intermedio-II" method="POST">
+            <ol>
+                <br>
+                <b><li>Conjuguez les verbes entre parenthèses au futur simple</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Dans 50 ans, notre ville</label>
+                        <input type="text" class="form-control" name="A1" placeholder="Être">
+                        <label>encore plus jolie. Il y</label>
+                        <input type="text" name="B1" class="form-control" placeholder="Avoir">
+                        <label>des voitures électriques de partout: cela</label>
+                        <input type="text" name="C1" class="form-control" placeholder="Diminuer">
+                    </div>
+                </div>
+                <label>la pollution considérablement.</label>
+
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Dans 20 ans Jacqueline et Paul</label>
+                        <input type="text" name="D1" class="form-control" placeholder="Être">
+                        <label>mariés, ils</label>
+                        <input type="text" name="E1" class="form-control" placeholder="Habiter">
+                        <label>en Afrique du sud et ils</label>
+                        <input type="text" name="F1" class="form-control" placeholder="Adopter">
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>un enfant et</label>
+                        <input type="text" name="G1" class="form-control" placeholder="Pouvoir">
+                        <label>vivre heureux.</label>
+                    </div>
+                </div>
+
+                <br>
+                <b><li>Complétez avec les pronoms relatifs: Qui/Que/Où</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Le chien</label>
+                        <select name="A2" class="form-control">
+                            <option selected value="qui">qui</option>
+                            <option value="que">que</option>
+                            <option value="où">où</option>
+                        </select>
+                        <label>je viens d'acheter est un Caniche blanc.</label>
+                    </div>
+                </div>
+
+                <br>
+                <b><li>Choisissez entre passé composé et imparfait</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Quand j'</label>
+                        <select name="A3" class="form-control">
+                            <option selected value="étais">étais</option>
+                            <option value="ai été">ai été</option>
+                        </select>
+                        <label>petite, j'</label>
+                        <select name="B3" class="form-control">
+                            <option selected value="allais">allais</option>
+                            <option value="suis alle">suis allé</option>
+                        </select>
+                        <label>au parc. Un jour, je</label>
+                        <select name="C3" class="form-control">
+                            <option selected value="tombais">tombais</option>
+                            <option value="suis tombé">suis tombé</option>
+                        </select>
+                        <label>du toboggan. J'</label>
+                        <select name="D3" class="form-control">
+                            <option selected value="pleurais">pleurais</option>
+                            <option value="ai pleure">ai pleure</option>
+                        </select>
+                        <label>et ma mère m'</label>
+                        <select name="E3" class="form-control">
+                            <option selected value="achetait">achetait</option>
+                            <option value="a achete">a achete</option>
+                        </select>
+                    </div>
+                </div>
+                <label>un pain au chocolat.</label>
+
+                <br>
+                <b><li>Choisissez le bon marqueur de temps</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <select name="A4" class="form-control">
+                            <option selected value="autrefois">Autrefois</option>
+                            <option value="aujourd'hui">Aujourd'hui</option>
+                        </select>
+                        <label>,les gens allaient au travail à vélo.</label>
+                        <select name="B4" class="form-control">
+                            <option selected value="de nous jours">De nous jours</option>
+                            <option value="a cette epoque-là">A cette epoque-là</option>
+                        </select>
+                        <label>,les gens utilisent beaucoup la voiture.</label>
+                    </div>
+                </div>
+
+                <br>
+                <b><li>Conjuguez le verbe au présent ou au futur</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Si tu fais du sport, tu</label>
+                        <input type="text" name="A5" class="form-control" placeholder="Être">
+                        <label>moins stressé.</label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Elle aura une bonne santé si elle</label>
+                        <input type="text" name="B5" class="form-control" placeholder="Manger">
+                        <label>bien.</label>
+                    </div>
+                </div>
+                <br>
+                <b><li>Choisissez la bonne expression</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Si je m'entraîne, je vais</label>
+                        <select name="A6" class="form-control">
+                            <option selected value="sûrement">sûrement</option>
+                            <option value="certainement pas">certainement pas</option>
+                        </select>
+                        <label>gagner le marathon.</label>
+                    </div>
+                </div>
+
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>Si elle laisse sa place dans l'équipe, ils vont </label>
+                        <select name="B6" class="form-control">
+                            <option selected value="sans doute">sans doute</option>
+                            <option value="sans doute pas">sans doute pas</option>
+                        </select>
+                        <label>m'appeler.</label>
+                    </div>
+                </div>
+
+                <br>
+                <b><li>Complètez las phrases avec: à la / au / à l'/ aux</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>J'ai mal</label>
+                        <input type="text" name="A7" class="form-control">
+                        <label>tête.</label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        <label>J'ai mal</label>
+                        <input type="text" name="B7" class="form-control">
+                        <label>pieds.</label>
+                    </div>
+                </div>
+            </ol>
+            <input type="submit" value="Siguiente" class="btn btn-success btn-lg" />
+        </form>
+    <% } else { %>
+    <h1>Ya presentaste este nivel</h1>
+        <% if(currentUsuario.inter2 >= 24) { %>
+            <a class="btn btn-outline-success" href="intermedio-III">Continuar en Intermedio II</a>
+            <br>
+       <% } else { %> 
+            <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
+            <br>
+        <% } %>
+    <% } %>
+</div>
+
+<% include _footer %>
