@@ -174,8 +174,8 @@
         <div>
     <% } else { %>
     <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.inter2 >= 24) { %>
-            <a class="btn btn-outline-success" href="intermedio-III">Continuar en Intermedio II</a>
+        <% if(currentUsuario.inter2 >= 14) { %>
+            <a class="btn btn-outline-success" href="intermedio-III">Continuar en Intermedio III</a>
             <br>
        <% } else { %> 
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>

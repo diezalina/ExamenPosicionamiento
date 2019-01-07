@@ -795,7 +795,7 @@ router.get("/intermedio-II",(req, res) => {
     res.render("intermedio-II-examen");
 });
 
-router.post("/intermedio-II",(req,res,next) => {
+router.post("/intermedio-II",ensureAuthenticated,(req,res,next) => {
     var A1 = req.body.A1.toLowerCase();
     var B1 = req.body.B1.toLowerCase();
     var C1 = req.body.C1.toLowerCase();
@@ -895,14 +895,102 @@ router.post("/intermedio-II",(req,res,next) => {
     });
 });
 
+router.get("/intermedio-II-resultado",(req,res)=>{
+    res.render("intermedio-II-resultado");
+});
+
 
 // intermedio III
 router.get("/intermedio-III",(req,res)=>{
     res.render("intermedio-III-examen");
 });
 
-router.post("/intermedio-III",(req,res,next) => {
-    
+router.post("/intermedio-III",ensureAuthenticated,(req,res,next) => {
+    var A1 = req.body.A1.toLowerCase();
+    var B1 = req.body.B1.toLowerCase();
+    var C1 = req.body.C1.toLowerCase();
+    var A2 = req.body.A2;
+    var B2 = req.body.B2;
+    var A3 = req.body.A3;
+    var B3 = req.body.B3;
+    var C3 = req.body.C3;
+    var D3 = req.body.D3;
+    var A4 = req.body.A4.toLowerCase();
+    var B4 = req.body.B4.toLowerCase();
+    var A5 = req.body.A5.toLowerCase();
+    var B5 = req.body.B5.toLowerCase();
+    var A6 = req.body.A6;
+    var B6 = req.body.B6;
+    var A7 = req.body.A7;
+    var B7 = req.body.B7;
+    var int3 = 0;
+    if(A1 === "il ne faut pas fumer"){
+        int3++;
+    }
+    if(B1 === "tu ne dois pas entrer"){
+        int3++;
+    }
+    if(C1 === "vous devez respecter l'espace"){
+        int3++;
+    }
+    if(A2 === "celle-ci"){
+        int3++;
+    }
+    if(B2 === "ceux-ci"){
+        int3++;
+    }
+    if(A3 === "repas"){
+        int3++;
+    }
+    if(B3 === "A"){
+        int3++;
+    }
+    if(C3 === "semestriel"){
+        int3++;
+    }
+    if(D3 === "B"){
+        int3++;
+    }
+    if(A4 === "agréablement"){
+        int3++;
+    }
+    if(B4 === "évidemment"){
+        int3++;
+    }
+    if(A5 === "penserais"){
+        int3++;
+    }
+    if(B5 === "pourrait"){
+        int3++;
+    }
+    if(A6 === "B"){
+        int3++;
+    }
+    if(B6 === "B"){
+        int3++;
+    }
+    if(A7 === "B"){
+        int3++;
+    }
+    if(B7 === "A"){
+        int3++;
+    }
+    console.log(int3);
+    req.usuario.inter3 = int3;
+    if(int3 < 11){
+        req.usuario.resultado = "Intermédiaire I: Entre Nous II (7 et 8).";
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/intermedio-III-resultado");
+    });
+});
+
+router.get("/intermedio-III-resultado",(req,res)=>{
+    res.render("intermedio-III-resultado");
 });
 
 //---------------------------------------//
