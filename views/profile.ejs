@@ -8,20 +8,22 @@
             <h1 class="display-4">Datos del alumno</h1>
             <b><p class="lead">Nombre completo: </b>
             <input class="form-control display-5" name="nombre" type="text" value="<%=usuario.name()%>"></p>
+            <b><p class="lead">Nombre de usuario: </b>
+            <input class="form-control display-5" name="usuario" type="text" value="<%= usuario.username%>"></p>
             <p class="lead"><b>Registrado el día: </b>
             <input class="form-control display-5" name="registro" type="text" value="<%= usuario.dateRegistrement %>"></p>
             <p class="lead"><b>Correo electrónico: </b><input class="form-control" name="correo" value="<%=usuario.correo%>"></p>
             <p class="lead"><b>Teléfono: </b><input class="form-control" name="telefono" value="<%= usuario.telefono %>"></p>
             <% if(usuario.resultado) { %>
                 <p class="lead"><b>Nivel de ubicación:</b><input class="form-control" name="resultado" value="<%= usuario.resultado %>"></p>
-                <% if(usuario.resultado==="Debutante I: Entre Nous 1, 2 et 3.") { %>
+                <% if(usuario.resultado === "Débutante I: Entre Nous I (1, 2 et 3).") { %>
                     <div class="col-4">
                         <div class="row">
                             <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/35"></p>
                         </div>
                     </div>
                 <% } %>
-                <% if(usuario.resultado==="Debutante II: Entre Nous 4, 5 et 6.") { %>
+                <% if(usuario.resultado==="Debutante II: Entre Nous I (4, 5 et 6).") { %>
                     <div class="col-4">
                         <div class="row">
                             <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/35"></p>

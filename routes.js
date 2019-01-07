@@ -795,10 +795,114 @@ router.get("/intermedio-II",(req, res) => {
     res.render("intermedio-II-examen");
 });
 
+router.post("/intermedio-II",(req,res,next) => {
+    var A1 = req.body.A1.toLowerCase();
+    var B1 = req.body.B1.toLowerCase();
+    var C1 = req.body.C1.toLowerCase();
+    var D1 = req.body.D1.toLowerCase();
+    var E1 = req.body.E1.toLowerCase();
+    var F1 = req.body.F1.toLowerCase();
+    var G1 = req.body.G1.toLowerCase();
+    var A2 = req.body.A2;
+    var A3 = req.body.A3;
+    var B3 = req.body.B3;
+    var C3 = req.body.C3;
+    var D3 = req.body.D3;
+    var E3 = req.body.E3;
+    var A4 = req.body.A4;
+    var B4 = req.body.B4;
+    var A5 = req.body.A5.toLowerCase();
+    var B5 = req.body.B5.toLowerCase();
+    var A6 = req.body.A6;
+    var B6 = req.body.B6;
+    var A7 = req.body.A7.toLowerCase();
+    var B7 = req.body.B7.toLowerCase();
+    var inter2 = 0;
+    if(A1 === "sera"){
+        inter2++;
+    }
+    if(B1 === "aura"){
+        inter2++;
+    }
+    if(C1 === "diminuera"){
+        inter2++;
+    }
+    if(D1 === "seront"){
+        inter2++;
+    }
+    if(E1 === "habiteront"){
+        inter2++;
+    }
+    if(F1 === "adopteront"){
+        inter2++;
+    }
+    if(G1 === "pourront"){
+        inter2++;
+    }
+    if(A2 === "que"){
+        inter2++;
+    }
+    if(A3 === "étais"){
+        inter2++;
+    }
+    if(B3 === "allais"){
+        inter2++;
+    }
+    if(C3 === "suis tombe"){
+        inter2++;
+    }
+    if(D3 === "ai pleure"){
+        inter2++;
+    }
+    if(E3 === "a achete"){
+        inter2++;
+    }
+    if(A4 === "autrefois"){
+        inter2++;
+    }
+    if(B4 === "de nous jours"){
+        inter2++;
+    }
+    if(A5 === "seras"){
+        inter2++;
+    }
+    if(B5 === "mange"){
+        inter2++;
+    }
+    if(A6 === "sûrement"){
+        inter2++;
+    }
+    if(B6 === "sans doute"){
+        inter2++;
+    }
+    if(A7 === "à la"){
+        inter2++;
+    }
+    if(B7 === "aux"){
+        inter2++;
+    }
+    console.log(inter2);
+    req.usuario.inter2 = inter2;
+    if(inter2 < 14){
+        req.usuario.resultado = "Intermédiaire I: Entre Nous II (4, 5 et 6).";
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/intermedio-II-resultado");
+    });
+});
+
 
 // intermedio III
 router.get("/intermedio-III",(req,res)=>{
     res.render("intermedio-III-examen");
+});
+
+router.post("/intermedio-III",(req,res,next) => {
+    
 });
 
 //---------------------------------------//
@@ -833,22 +937,30 @@ router.post("/etudiantes/:username", (req, res, next) => {
     var correo = req.body.correo;
     var resultado = req.body.resultado;
     var telefono = req.body.telefono;
-    //console.log(prueba);
+    var usuario = req.body.usuario;
+    //console.log(usuario);
     //console.log(nombre);
-    doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + telefono + '-resultado' +'.pdf'));    
+    doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + usuario + '-resultado' +'.pdf'));    
     doc.image('public/pdf-logo.jpg', 0, 0)
-        .fontSize(23)
+        .fontSize(24)
         .font('public/fonts/ariali.ttf')
-        .text(nombre, 50, 300);
+        .text('¡Félicitations!', 50, 230);
+
+    doc.fontSize(16)
+       .font('public/fonts/ariali.ttf')
+       .text(nombre, 50, 300);
 
     doc.fontSize(12)
         .font('public/fonts/verdana.ttf')
         .text('Correo electrónico: ' + correo, 50, 325)
-        .text('Télefono: ' + telefono, 50, 340);
+        .text('Télefono: ' + telefono, 50, 340)
+        .text('A través del presente documento, nos alegra comunicarle sus resultados en el examen de ubicación de la lengua francesa en nuestra institución.', 50, 255)
+        .text('A continuación damos a conocer los resultados del alumno/a:', 50, 285);
     
     doc.fontSize(18)
         .font('public/fonts/ariali.ttf')
         .text(resultado, 150, 370);
+    
     doc.end();
     
 });
