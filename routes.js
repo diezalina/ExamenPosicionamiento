@@ -1033,6 +1033,26 @@ router.get("/avanzado-II", (req, res, next) => {
     res.render("avanzado-II-examen");
 });
 
+router.post("/avanzado-II", (req, res, next) => {
+    var A1 = req.body.A1.toLowerCase();
+    var B1 = req.body.B1.toLowerCase();
+    var C1 = req.body.C1.toLowerCase();
+    var D1 = req.body.D1.toLowerCase();
+    var A2 = req.body.A2;
+    var B2 = req.body.B2;
+    var A3 = req.body.A3;
+    var B3 = req.body.B3;
+    var C3 = req.body.C3;
+    var A4 = req.body.A4.toLowerCase();
+    var B4 = req.body.B4.toLowerCase();
+    var A5 = req.body.A5;
+    var A6 = req.body.A6;
+    var B6 = req.body.B6;
+    var A7 = req.body.A7;
+    var A8 = req.body.A8.toLowerCase();
+    var B8 = req.body.B8.toLowerCase();
+});
+
 router.get("/avanzado-III", (req, res, next) => {
     res.render("avanzado-III-examen");
 });
