@@ -5,13 +5,19 @@
     <% if(!currentUsuario.avanc2) { %> 
         <form action="/avanzado-II" method="POST">
             <ol>
-                <b><li></li></b>
+                <b><li>Conjuguez ces verbes au subjonctif présent</li></b>
+                <br>
+                <div class="form-inline">
+                    <div class="input-group">
+                        
+                    </div>
+                </div>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
         </form>    
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.avanc2 >= 16) { %>
+        <% if(currentUsuario.avanc2 >= 11) { %>
             <a class="btn btn-outline-success" href="avanzado-III">Continuar en Avanzado III</a>
             <br>
        <% } else { %> 

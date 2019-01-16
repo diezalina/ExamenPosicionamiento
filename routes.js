@@ -998,6 +998,37 @@ router.get("/avanzado-I", (req, res, next) => {
     res.render("avanzado-I-examen");
 });
 
+router.post("/avanzado-II", (req, res, next) => {
+    var A1 = req.body.A1;
+    var B1 = req.body.B1;
+    var A2 = req.body.A2;
+    var B2 = req.body.B2;
+    var A3 = req.body.A3.toLowerCase();
+    var B3 = req.body.B3.toLowerCase();
+    var A4 = req.body.A4.toLowerCase();
+    var B4 = req.body.B4.toLowerCase();
+    var A5 = req.body.A5;
+    var B5 = req.body.B5;
+    var A6 = req.body.A6.toLowerCase();
+    var B6 = req.body.B6.toLowerCase();
+    var C6 = req.body.C6.toLowerCase();
+    var A7 = req.body.A7;
+    var avanc1 = 0;
+    //TODO evaluar cada valor
+    console.log(avanc1);
+    req.usuario.avanc1 = avanc1;
+    if(avanc1 < 9){
+        req.usuario.resultado = "Avancé I: Entre Nous III (1, 2 et 3).";
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/avanzado-I-resultado");
+    });
+});
+
 router.get("/avanzado-II", (req, res, next) => {
     res.render("avanzado-II-examen");
 });
