@@ -1,0 +1,18 @@
+<% include _header %>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Terminaste Perf III</h1>
+        <p class="lead">Concluiste correctamente el nivel de Perf III</p>
+        <div class="form-inline">
+            <label><b>Resultado: </b></label>
+            <label> <%= currentUsuario.perf3 %></label>
+            <label>/17</label>
+        </div>
+        <% if(currentUsuario.perf3 >= 11) {%> 
+            <a class="btn btn-outline-success" href="/perfecto-IV">Continuar</a>
+        <% } else {%>
+            <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Finalizar</a>
+        <% } %>
+    </div>
+</div>
+<% include _footer %>

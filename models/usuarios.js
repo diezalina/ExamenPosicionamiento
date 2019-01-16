@@ -20,11 +20,13 @@ var usuarioSchema = mongoose.Schema({
     inter1: { type: Number },
     inter2: { type: Number },
     inter3: { type: Number },
-    inter4: { type: Number },
     avanc1: { type: Number },
     avanc2: { type: Number },
     avanc3: { type: Number },
-    avanc4: { type: Number },
+    perf1: { type: Number },
+    perf2: { type: Number },
+    perf3: { type: Number },
+    perf4: { type: Number },
     resultado: { type: String }
 });
 

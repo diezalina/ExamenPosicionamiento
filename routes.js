@@ -993,6 +993,63 @@ router.get("/intermedio-III-resultado",(req,res)=>{
     res.render("intermedio-III-resultado");
 });
 
+//Avanzados GET
+router.get("/avanzado-I", (req, res, next) => {
+    res.render("avanzado-I-examen");
+});
+
+router.get("/avanzado-II", (req, res, next) => {
+    res.render("avanzado-II-examen");
+});
+
+router.get("/avanzado-III", (req, res, next) => {
+    res.render("avanzado-III-examen");
+});
+
+router.get("/avanzado-I-resultado",(req, res, next) => {
+    res.render("avanzado-I-resultado");
+});
+
+router.get("/avanzado-II-resultado", (req, res, next) => {
+    res.render("avanzado-II-resultado");
+});
+
+router.get("/avanzado-III-resultado", (req, res, next) => {
+    res.render("avanzado-III-resultado");
+});
+
+router.get("/perf-I", (req, res, next) => {
+    res.render("perf-I-examen");
+});
+
+router.get("/perf-II", (req, res, next) => {
+    res.render("perf-II-examen");
+});
+
+router.get("/perf-IV", (req, res, next) => {
+    res.render("perf-IV-examen");
+});
+
+router.get("/perf-III", (req, res, next) => {
+    res.render("perf-III-examen");
+});
+
+router.get("/perf-I-resultado", (req, res, next) => {
+    res.render("perf-I-resultado");
+});
+
+router.get("/perf-II-resultado", (req, res, next) => {
+    res.render("perf-II-resultado");
+});
+
+router.get("/perf-III-resultado", (req, res, next) => {
+    res.render("perf-III-resultado");
+});
+
+router.get("/perf-IV-resultado", (req, res, next) => {
+    res.render("perf-IV-resultado");
+});
+
 //---------------------------------------//
 //           PDF - LISTADO               //
 //---------------------------------------//

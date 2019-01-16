@@ -1,0 +1,24 @@
+<% include _header %>
+
+<div class="container" id="marginStudent">
+    <h4>Avancé II</h4>
+    <% if(!currentUsuario.avanc2) { %> 
+        <form action="/avanzado-II" method="POST">
+            <ol>
+                <b><li></li></b>
+            </ol>
+            <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
+        </form>    
+    <% } else { %>
+        <h1>Ya presentaste este nivel</h1>
+        <% if(currentUsuario.avanc2 >= 16) { %>
+            <a class="btn btn-outline-success" href="avanzado-III">Continuar en Avanzado III</a>
+            <br>
+       <% } else { %> 
+            <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
+            <br>
+        <% } %>
+    <% } %>
+</div>
+
+<% include _footer %>
