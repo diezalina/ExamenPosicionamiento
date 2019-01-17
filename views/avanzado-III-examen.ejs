@@ -5,13 +5,149 @@
     <% if(!currentUsuario.avanc3) { %> 
         <form action="/avanzado-III" method="POST">
             <ol>
-                <b><li></li></b>
+                <b><li>Répondez aux questions en utilisant le pronom en</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Tu veux des tomates? -Oui,</label>
+                    <input type="text" name="A1" class="form-control">
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Vous n'avez pas de salade? -Non,</label>
+                    <input type="text" name="B1" class="form-control">
+                </div>
+                <br>
+                <b><li>Écrivez le nom qui correspond au verbe souligne</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>J'aime <u>voyager:</u> j'aime les</label>
+                    <input type="text" class="form-control" name="A2">
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Il n'est pas <u>arrivé</u> jusqu'à la ligne: il n'a pas atteint l'</label>
+                    <input type="text" class="form-control" name="B2">
+                </div>
+                <br>
+                <b><li>Rapportez le discours suivant au passé</li></b>
+                <br>
+                <label>Henri: "qu'est ce que tu fais dans cette tenue?"</label>
+                <div class="form-inline">
+                    <label>Henri m'a demandé</label>
+                    <select name="A3" class="form-control">
+                        <option selected value="A">ce que je fait dans cette tenue</option>
+                        <option value="B">ce que je faisais dans cette tenue</option>
+                        <option value="C">ce que je faire dans cette tenue</option>
+                    </select>
+                </div>
+                <br>
+                <label>Discours direct: Louis: "tu viens chez moi ce soir?" </label>
+                <div class="form-inline">
+                    <label>Discours indirect:</label>
+                    <select name="B3" class="form-control">
+                        <option selected value="A">il me demande si je viens chez lui ce soir</option>
+                        <option value="B">il me demande viens chez moi ce soir</option>
+                    </select>
+                </div>
+                <br>
+                <b><li>Complétez pour faire des phrases complètes et cohérentes</li></b>
+                <div class="form-inline">
+                    <label>Je n'ai pas pu partir</label>
+                    <select name="A4" class="form-control">
+                        <option selected value="A">à cause de ta mauvaise entente avec Laure</option>
+                        <option value="B">car je n'avais pas totalement fini mon travail</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Tu n'aurais pas dû venir</label>
+                    <select name="B4" class="form-control">
+                        <option selected value="A">à cause de ta mauvaise entente avec Laure</option>
+                        <option value="B">car je n'avais pas totalement fini mon travail</option>
+                    </select>
+                </div>
+                <br>
+                <b><li>Choisissez entre <i>c'est...que</i> et <i>c'est...qui</i></li></b>
+                <br>
+                <div class="form-inline">
+                    <label>C'est toi</label>
+                    <select name="A5" class="form-control">
+                        <option selected value="que">que</option>
+                        <option value="qui">qui</option>
+                    </select>
+                    <label>j'aime.</label>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Ce</label>
+                    <select name="B5" class="form-control">
+                        <option selected value="que">que</option>
+                        <option value="qui">qui</option>
+                    </select>
+                    <label>l'intéresse ce sont les femmes.</label>
+                </div>
+                <br>
+                <b><li>Choisissez le bon pronom relatif dans les phrases suivantes</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Les vêtements</label>
+                    <select name="A6" class="form-control">
+                        <option selected value="qui">qui</option>
+                        <option value="que">que</option>
+                        <option value="où">où</option>
+                        <option value="dont">dont</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Les règles vestimentaires</label>
+                    <select name="B6" class="form-control">
+                        <option selected value="dont">dont</option>
+                        <option value="qui">qui</option>
+                        <option value="que">que</option>
+                    </select>
+                    <label>je vous ai parlé sont obligatoires.</label>
+                </div>
+                <br>
+                <b><li>Transformez la phrase a la voix passive</li></b>
+                <br>
+                <label>Les cambrioleurs ont pris les diamants.</label>
+                <input type="text" class="form-control" name="A7">
+                <br>
+                <b><li>Choisissez la bonne expression de concession</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Tu as réussi ton examen</label>
+                    <select name="A8" class="form-control">
+                        <option selected value="cependant">cependant</option>
+                        <option value="bien que">bien que</option>
+                    </select>
+                    <label>tu n'as pas fait les exercises complémentaires.</label>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <select name="B8" class="form-control">
+                        <option selected value="bien que">Bien que</option>
+                        <option value="pourtant">Pourtant</option>
+                    </select>
+                    <label>le proffeseur soit absent, vous devez venir en classe.</label>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Il est venu en classe</label>
+                    <select name="C8" class="form-control">
+                        <option selected value="malgré">malgré</option>
+                        <option value="toutefois">toutefois</option>
+                    </select>
+                    <label>sa forte fièvre.</label>
+                </div>
+                <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
         </form>    
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.avanc3 >= 16) { %>
+        <% if(currentUsuario.avanc3 >= 11) { %>
             <a class="btn btn-outline-success" href="perf-I">Continuar en Perf I</a>
             <br>
        <% } else { %> 
