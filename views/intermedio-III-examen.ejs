@@ -14,16 +14,6 @@
                         <img src="/imgs/no-smoking.png">
                     </div>
                 </div>
-
-                <br>
-                <p class="display-9">Entrée interdite: il faut entrer/tu ne dois pas entrer</p>
-                <div class="form-inline">
-                    <div class="col-6">
-                        <input type="text" class="form-control" name="B1">
-                        <img src="/imgs/shout.png">
-                    </div>
-                </div>
-
                 <br>
                 <p class="display-9">Merci de respecter l'espace réservé: vous devez respecter l'espace/obligation d'éntrée</p>
                 <div class="form-inline">
@@ -46,72 +36,8 @@
                         <label>?</label>
                     </div>
                 </div>
-
                 <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Tu veux des pantalons? Tu préfères</label>
-                        <select name="B2" class="form-control">
-                            <option selected value="ceux-ci">ceux-ci</option>
-                            <option value="celui-ci">celui-ci</option>
-                        </select>
-                        <label>?</label>
-                    </div>
-                </div>
-
-                <br>
-                <b><li>Lisez le texte et répondez aux questions</li></b>
-                <img src="/imgs/text.jpg">
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Des petites bouffes, sont des:</label>
-                        <select name="A3" class="form-control">
-                            <option selected value="fêtes">Fêtes</option>
-                            <option value="repas">Repas</option>
-                            <option value="jeux">Jeux</option>
-                        </select>
-                    </div>
-                </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Hebdomadaire, signifie: </label>
-                        <select name="B3" class="form-control">
-                            <option selected value="A">Une fois par semaine</option>
-                            <option value="B">Une fois par trimestre</option>
-                            <option value="C">Une fois par mois</option>
-                        </select>
-                    </div>
-                </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Une fois tous les six mois, se dit:</label>
-                        <select name="C3" class="form-control">
-                            <option selected value="simestriel">Simestriel</option>
-                            <option value="sixmestriel">Sixmestriel</option>
-                            <option value="semestriel">Semestriel</option>
-                        </select>
-                    </div>
-                </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Dans la phrase, les Montmartrois inestissent régulièrement les rues, le verbe investir veut dire qu'ils:</label>
-                        <select name="D3" class="form-control">
-                            <option selected value="A">Dépensent de l'argent dans les rues</option>
-                            <option value="B">Remplissent les rues</option>
-                            <option value="C">Font construire des maisons dans les rues</option>
-                        </select>
-                    </div>
-                </div>
-
-                <br>
-                <b><li>Écrivez les adverbes à partir des adjectifs suivants</li></b>
+                <b><li>Écrivez l'adverbe à partir des adjectifs suivants</li></b>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
@@ -155,11 +81,6 @@
                     <option selected value="A">J'ai acheté une maison nouvelle à la campagne</option>
                     <option value="B">J'ai acheté une nouvelle maison à la campagne</option>
                 </select>
-                <br>
-                <select name="B6" class="form-control">
-                    <option selected value="A">Cette table petite est magnifique</option>
-                    <option value="B">Cette petite table est magnifique</option>
-                </select>
 
                 <br>
                 <b><li>Choisissez la bonne option pour compléter l'hypothèse</li></b>
@@ -175,22 +96,12 @@
                 </div>
 
                 <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Si elle avait des vacances,</label>
-                        <select name="B7" class="form-control">
-                            <option selected value="A">elle pourrait aller à la plage</option>
-                            <option value="B">elle peut aller à la plage</option>
-                        </select>
-                    </div>
-                </div>
-                <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg" />
         </form>
     <% } else { %>
     <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.inter3 >= 16) { %>
+        <% if(currentUsuario.inter3 >= 6) { %>
             <a class="btn btn-outline-success" href="avanzado-I">Continuar en Avancé I</a>
             <br>
        <% } else { %> 

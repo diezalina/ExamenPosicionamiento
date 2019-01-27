@@ -2,13 +2,13 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Terminaste Avancé II</h1>
-        <p class="lead">Concluiste correctamente el nivel de Debutante III</p>
+        <p class="lead">Concluiste correctamente el nivel de Avancé II</p>
         <div class="form-inline">
             <label><b>Resultado: </b></label>
             <label> <%= currentUsuario.avanc2 %></label>
-            <label>/16</label>
+            <label>/7</label>
         </div>
-        <% if(currentUsuario.avanc2 >= 11) {%> 
+        <% if(currentUsuario.avanc2 >= 5) {%> 
             <a class="btn btn-outline-success" href="/avanzado-III">Continuar</a>
         <% } else {%>
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Finalizar</a>

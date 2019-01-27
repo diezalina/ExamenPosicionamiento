@@ -7,17 +7,6 @@
             <ol>
                 <b><li>Choisissez le bon pronom possessif</li></b>
                 <br>
-                <label>Tu me prêtes ton pantalon?</label>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>-Ah, non c'est</label>
-                        <select name="A1" class="form-control">
-                            <option selected value="le tien">le tien</option>
-                            <option value="le mien">le mien</option>
-                        </select>
-                    </div>
-                </div>
-                <br>
                 <label>Son père est à côté de Denise?</label>
                 <div class="form-inline">
                     <div class="input-group">
@@ -43,30 +32,12 @@
                     </div>
                 </div>
                 <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Quelle tarte vous avez</label>
-                        <select name="B2" class="form-control">
-                            <option selected value="tait">tait</option>
-                            <option value="faite">faite</option>
-                        </select>
-                        <label>pour l'anniversaire de Luc?</label>
-                    </div>
-                </div>
-                <br>
                 <b><li>Metez les verbes soulignés au gérondif</li></b>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
                         <label>Je me douche et je chante: Je me douche </label>
                         <input type="text" name="A3" class="form-control">
-                    </div>
-                </div>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Je parle et je dors: Je parle</label>
-                        <input type="text" name="B3" class="form-control">
                     </div>
                 </div>
                 <br>
@@ -80,26 +51,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Quand il est arrivé en Chine, Alice</label>
-                        <input type="text" class="form-control" placeholder="visiter" name="B4">
-                        <label>la cité interdite.</label>
-                    </div>
-                </div>
-                <br>
                 <b><li>Gérondif ou participe présent</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>J'écris mes chansons</label>
-                        <select name="A5" class="form-control">
-                            <option selected value="en pensant">en pensant</option>
-                            <option value="pensant">pensant</option>
-                        </select>
-                        <label>à mes amis.</label>
-                    </div>
-                </div>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
@@ -123,37 +75,18 @@
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
-                        <label>Si tu veux devenir artiste,</label>
-                        <input type="text" name="B6" class="form-control" placeholder="se lancer">
-                        <label>!</label>
-                    </div>
-                </div>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
                         <label>Si tu ne comprends pas les paroles tu</label>
                         <input type="text" name="C6" class="form-control" placeholder="devoir">
                         <label>les chercher sur internet.</label>
                     </div>
                 </div>
                 <br>
-                <b><li>Choisissez la bonne émotion</li></b>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>J'adore écouter de la musique quand je me lève,</label>
-                        <select name="A7" class="form-control">
-                            <option selected value="ca me donne de l'energie">ca me donne de l'energie</option>
-                            <option value="ca me déprime">ca me déprime</option>
-                        </select>
-                    </div>
-                </div>
-                <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
-        </form>    
+        </form>
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.avanc1 >= 9) { %>
+        <% if(currentUsuario.avanc1 >= 5) { %>
             <a class="btn btn-outline-success" href="avanzado-II">Continuar en Avanzado II</a>
             <br>
        <% } else { %> 

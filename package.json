@@ -4,7 +4,8 @@
   "description": "Examen Frances",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "start:app": "nodemon app.js"
   },
   "author": "AMDGR",
   "license": "ISC",
@@ -20,9 +21,11 @@
     "express-session": "^1.15.6",
     "mongoose": "^5.4.2",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.7",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pdfkit": "^0.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }

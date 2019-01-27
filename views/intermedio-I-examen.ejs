@@ -6,7 +6,7 @@
         <form action="/intermedio-I" method="POST">
             <ol>
                 <br>
-                <b><li>Répondez aux questions en utilisant le pronom Y.</li></b>
+                <b><li>Répondez à la question en utilisant le pronom Y.</li></b>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
@@ -16,41 +16,7 @@
                 </div>
 
                 <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Vous allez aux Maldives pour les vacances? Oui, </label>
-                        <input name="B1" type="text" class="form-control">
-                    </div>
-                </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Tu pars en France pour noël? Non, </label>
-                        <input name="C1" type="text" class="form-control">
-                    </div>
-                </div>
-
-                <br>
                 <b><li>Complétez les phrases suivantes en utilisant lui ou leur</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Je téléphone à mes parents = Je</label>
-                        <input type="text" name="A2" class="form-control">
-                        <label>téléphone.</label>
-                    </div>
-                </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Je parle avec Henry = Je</label>
-                        <input type="text" name="B2" class="form-control">
-                        <label>parle.</label>
-                    </div>
-                </div>
-
                 <br>
                 <b><li>Choissisez la bonne réponse</li></b>
 
@@ -79,19 +45,6 @@
                         <label>de la salade.</label>
                     </div>
                 </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Je ne veux</label>
-                        <select name="C3" class="form-control">
-                            <option selected value="pas">pas</option>
-                            <option value="encore">encore</option>
-                        </select>
-                        <label>de légumes.</label>
-                    </div>
-                </div>
-
                 <br>
                 <b><li>Conjuguez les verbes entre parenthèses à l'imparfait</li></b>
                 <br>
@@ -101,11 +54,7 @@
                         <input type="text" name="A4" placeholder="être" class="form-control">
                         <label>petite, j'</label>
                         <input type="text" name="B4" class="form-control" placeholder="aller">
-                        <label>souvent chez mes grand-parents, je</label>
-                        <input type="text" name="C4" class="form-control" placeholder="dormir">
-                        <label>souvent chez eux et nous</label>
-                        <input type="text" name="D4" class="form-control" placeholder="partir">
-                        <label>toujours au parc après le déjeuner.</label>
+                        <label>souvent chez mes grand-parents.</label>
                     </div>
                 </div>
 
@@ -136,31 +85,6 @@
                         <label>que ma soeur.</label>
                     </div>
                 </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Je fais</label>
-                        <select name="C5" class="form-control">
-                            <option selected value="moins">moins</option>
-                            <option value="plus de">plus de</option>
-                        </select>
-                        <label>sport que mes amis.</label>
-                    </div>
-                </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Je dors</label>
-                        <select name="D5" class="form-control">
-                            <option selected value="moins de">moins de</option>
-                            <option value="moins que">moins que</option>
-                        </select>
-                        <label>temps que mes parents.</label>
-                    </div>
-                </div>
-
                 <br>
                 <b><li>Complétez avec les pronoms COI ou COD qui conviennent: </li></b>
                 <p class="lead">Me/te/le/la/les/l'/nous/vous/lui/leur</p>
@@ -225,21 +149,6 @@
                         <label>Norman.</label>
                     </div>
                 </div>
-
-                <br>
-                <p><i>Mon immeuble fait 7 étages, l'immeuble de Sandrine fait 8 étaes. (haut)</i></p>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Mon immeuble est</label>
-                        <select name="B7" class="form-control">
-                            <option selected value="A">plus haut que</option>
-                            <option value="B">moins haut que</option>
-                            <option value="C">aussi haut que</option>
-                        </select>
-                        <label>l'immeuble de Sandrine.</label>
-                    </div>
-                </div>
-
                 <br>
                 <b><li>Choissisez l'adjectif ou pronom indéfini correct</li></b>
                 <br>
@@ -252,24 +161,13 @@
                         <label>des gens sont pour l'égalité des genres.</label>
                     </div>
                 </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <select name="B8" class="form-control">
-                            <option selected value="beaucoup de">Beaucoup de</option>
-                            <option value="quelques-uns">Quelques-uns</option>
-                        </select>
-                        <label>prennent un congé parental.</label>
-                    </div>
-                </div>
                 <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg" />
         </form>
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.inter1 >= 16) { %>
+        <% if(currentUsuario.inter1 >= 7) { %>
             <a class="btn btn-outline-success" href="intermedio-II">Continuar en Intermedio II</a>
             <br>
         <% } else { %> 

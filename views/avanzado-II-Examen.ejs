@@ -5,29 +5,13 @@
     <% if(!currentUsuario.avanc2) { %> 
         <form action="/avanzado-II" method="POST">
             <ol>
-                <b><li>Conjuguez ces verbes au subjonctif présent</li></b>
+                <b><li>Conjuguez le verbe au subjonctif présent</li></b>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
                         <label>Il faut que tu</label>
                         <input type="text" name="A1" class="form-control" placeholder="être">
                         <label>à l'heure à ton cours.</label>
-                    </div>
-                </div>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Le professeur exige qu'ils</label>
-                        <input type="text" name="B1" class="form-control" placeholder="écrire">
-                        <label>au moins ce texte.</label>
-                    </div>
-                </div>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Il est important que vous</label>
-                        <input type="text" class="form-control" name="C1" placeholder="se concentrer">
-                        <label>bien sur ce devoir.</label>
                     </div>
                 </div>
                 <br>
@@ -40,17 +24,6 @@
                 </div>
                 <br>
                 <b><li>Choisissez entre l'infinitif/le subjonctif présent/le présent de l'indicatif</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Il est nécessaire que</label>
-                        <select name="A2" class="form-control">
-                            <option selected value="tu vas">tu vas</option>
-                            <option value="tu ailles">tu ailles</option>
-                        </select>
-                        <label>à cet entretien d'embauche</label>
-                    </div>
-                </div>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
@@ -78,17 +51,6 @@
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
-                        <label>Je n'ai pas mis la lettre sur la table = je ne</label>
-                        <select name="B3" class="form-control">
-                            <option selected value="l'ai">l'ai</option>
-                            <option value="la ai">la ai</option>
-                        </select>
-                        <label>pas mise sur la table.</label>
-                    </div>
-                </div>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
                         <label>Il montre à son amie les lettres qu'il a reçues = il</label>
                         <select name="C3" class="form-control">
                             <option selected value="la les">la les</option>
@@ -98,15 +60,7 @@
                     </div>
                 </div>
                 <br>
-                <b><li>Complétez ces phrases à l'infinitif passé</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Elle regrette de</label>
-                        <input type="text" class="form-control" name="A4" placeholder="ne pas avoir">
-                        <label>ce film au cinéma.</label>
-                    </div>
-                </div>
+                <b><li>Complétez cette phrase à l'infinitif passé</li></b>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
@@ -129,52 +83,12 @@
                     </div>
                 </div>
                 <br>
-                <b><li>Quelle phrase exprime la condition?</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="A6" value="A">
-                        <label>Nous arriverons à l'heure à condition de partir maintenant.</label>
-                    </div>
-                </div>
-                <br>
-                <div class="form-inline">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="B6" value="B">
-                        <label>Nous arriverons à l'heure car nous partons maintenant.</label>
-                    </div>
-                </div>
-                <br>
-                <b><li>Complétez cette hypothèse</li></b>
-                <br>
-                <div class="form-inline">
-                    <label>Si j'avais gagné au loto...</label>
-                    <select name="A7" class="form-control">
-                        <option selected value="A">J'avais acheté une voiture</option>
-                        <option value="B">J'aurais acheté une voiture</option>
-                    </select>
-                </div>
-                <br>
-                <b><li>Réécrivez la phrase en utilisant un verbe impersonnel</li></b>
-                <br>
-                <label>Nous devons faire attention aux arnaques sur Internet</label>
-                <div class="form-inline">
-                    <label>Il faut</label>
-                    <input type="text" name="A8" class="form-control">
-                </div>
-                <br>
-                <label>Nous devons dénoncer les fraudeurs sur Internet</label>
-                <div class="form-inline">
-                    <label>Il est indispensable que</label>
-                    <input type="text" name="B8" class="form-control">
-                </div>
-                <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
         </form>    
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.avanc2 >= 11) { %>
+        <% if(currentUsuario.avanc2 >= 5) { %>
             <a class="btn btn-outline-success" href="avanzado-III">Continuar en Avanzado III</a>
             <br>
        <% } else { %> 

@@ -19,41 +19,6 @@
                     </div>
                 </div>
                 <label>la pollution considérablement.</label>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Dans 20 ans Jacqueline et Paul</label>
-                        <input type="text" name="D1" class="form-control" placeholder="Être">
-                        <label>mariés, ils</label>
-                        <input type="text" name="E1" class="form-control" placeholder="Habiter">
-                        <label>en Afrique du sud et ils</label>
-                        <input type="text" name="F1" class="form-control" placeholder="Adopter">
-                    </div>
-                </div>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>un enfant et</label>
-                        <input type="text" name="G1" class="form-control" placeholder="Pouvoir">
-                        <label>vivre heureux.</label>
-                    </div>
-                </div>
-
-                <br>
-                <b><li>Complétez avec les pronoms relatifs: Qui/Que/Où</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Le chien</label>
-                        <select name="A2" class="form-control">
-                            <option selected value="qui">qui</option>
-                            <option value="que">que</option>
-                            <option value="où">où</option>
-                        </select>
-                        <label>je viens d'acheter est un Caniche blanc.</label>
-                    </div>
-                </div>
-
                 <br>
                 <b><li>Choisissez entre passé composé et imparfait</li></b>
                 <br>
@@ -89,33 +54,7 @@
                 <label>un pain au chocolat.</label>
 
                 <br>
-                <b><li>Choisissez le bon marqueur de temps</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <select name="A4" class="form-control">
-                            <option selected value="autrefois">Autrefois</option>
-                            <option value="aujourd'hui">Aujourd'hui</option>
-                        </select>
-                        <label>,les gens allaient au travail à vélo.</label>
-                        <select name="B4" class="form-control">
-                            <option selected value="de nous jours">De nous jours</option>
-                            <option value="a cette epoque-là">A cette epoque-là</option>
-                        </select>
-                        <label>,les gens utilisent beaucoup la voiture.</label>
-                    </div>
-                </div>
-
-                <br>
                 <b><li>Conjuguez le verbe au présent ou au futur</li></b>
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Si tu fais du sport, tu</label>
-                        <input type="text" name="A5" class="form-control" placeholder="Être">
-                        <label>moins stressé.</label>
-                    </div>
-                </div>
                 <br>
                 <div class="form-inline">
                     <div class="input-group">
@@ -137,19 +76,6 @@
                         <label>gagner le marathon.</label>
                     </div>
                 </div>
-
-                <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>Si elle laisse sa place dans l'équipe, ils vont </label>
-                        <select name="B6" class="form-control">
-                            <option selected value="sans doute">sans doute</option>
-                            <option value="sans doute pas">sans doute pas</option>
-                        </select>
-                        <label>m'appeler.</label>
-                    </div>
-                </div>
-
                 <br>
                 <b><li>Complètez las phrases avec: à la / au / à l'/ aux</li></b>
                 <br>
@@ -161,20 +87,13 @@
                     </div>
                 </div>
                 <br>
-                <div class="form-inline">
-                    <div class="input-group">
-                        <label>J'ai mal</label>
-                        <input type="text" name="B7" class="form-control">
-                        <label>pieds.</label>
-                    </div>
-                </div>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg" />
         </form>
         <div>
     <% } else { %>
     <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.inter2 >= 14) { %>
+        <% if(currentUsuario.inter2 >= 7) { %>
             <a class="btn btn-outline-success" href="intermedio-III">Continuar en Intermedio III</a>
             <br>
        <% } else { %> 

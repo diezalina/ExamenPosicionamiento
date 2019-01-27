@@ -6,9 +6,9 @@
         <div class="form-inline">
             <label><b>Resultado: </b></label>
             <label> <%= currentUsuario.avanc1 %></label>
-            <label>/14</label>
+            <label>/7</label>
         </div>
-        <% if(currentUsuario.avanc1 >= 9) {%> 
+        <% if(currentUsuario.avanc1 >= 5) {%> 
             <a class="btn btn-outline-success" href="/avanzado-I">Continuar</a>
         <% } else {%>
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Finalizar</a>
