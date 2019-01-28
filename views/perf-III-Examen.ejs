@@ -1,23 +1,98 @@
 <% include _header %>
 
 <div class="container" id="marginStudent">
-    <h4>Perfecto IV</h4>
-    <% if(!currentUsuario.perf4) { %> 
-        <form action="/perfecto-IV" method="POST">
+    <h4>Perfecto III</h4>
+    <% if(!currentUsuario.perf3) { %> 
+        <form action="/perf-III" method="POST">
             <ol>
-                <b><li></li></b>
+                <b><li>Choisissez le mot correct pour exprimer la cause ou la conséquence</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Je ne veux plus aller à mes cours de danse</label>
+                    <select name="A1" class="form-control">
+                        <option selected value="puisque">puisque</option>
+                        <option value="à cause de">à cause de</option>
+                    </select>
+                    <label>je n'aime pas les nouvelles chorégraphies</label>
+                </div>
+                <br>
+                <b><li>Choisissez la bonne réponse: dès que/ depuis que / jusqu'à ce que</li></b>
+                <br>
+                <div class="form-inline">
+                    <select name="A2" class="form-control">
+                        <option selected value="dés que">Dés que</option>
+                        <option value="depuis que">Depuis que</option>
+                    </select>
+                    <label>tu partiras, je pourrais commencer mon travail.</label>
+                </div>
+                <br>
+                <b><li>Conjuguez les verbes au subjonctif passe</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Je suis fier qu'il</label>
+                    <input type="text" name="A3" class="form-control" placeholder="Pouvoir">
+                    <label>réaliser son expo.</label>
+                </div>
+                <br>
+                <b><li>Choisissez la bonne forme</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Elle</label>
+                    <select name="A4" class="form-control">
+                        <option selected value="alla">alla</option>
+                        <option value="allions">allions</option>
+                    </select>
+                    <label>au bord du lac et en</label>
+                    <select name="B4" class="form-control">
+                        <option selected value="fut">fut</option>
+                        <option value="fit">fit</option>
+                    </select>
+                    <label>le tour. Quand elle</label>
+                    <select name="C4" class="form-control">
+                        <option selected value="revenu">revenu</option>
+                        <option value="revint">revint</option>
+                    </select>
+                    <label>,elle</label>
+                    <select name="D4" class="form-control">
+                        <option selected value="vit">vit</option>
+                        <option value="vîmes">vîmes</option>
+                    </select>
+                    <label>son frère parler au jeune homme, elle</label>
+                    <select name="E4" class="form-control">
+                        <option selected value="s'approchai">s'approchai</option>
+                        <option value="s'approcha">s'approcha</option>
+                    </select>
+                    <label>pour écouter leur conversation.</label>
+                </div>
+                <br>
+                <b><li>Completez en utilisant: après que, le jour où, depuis que, chaque fois que</li></b>
+                <br>
+                <div class="form-inline">
+                    <input type="text" name="A5" class="form-control">
+                    <label>je l'ai vu je ne pouvais pas en croire mes yeux. C'était la première fois que je le revoyais. Il était resté dans le Nord</label>
+                    <input type="text" name="B5" class="form-control">
+                    <label>je suis rentré chez moi.</label>
+                </div>
+                <br>
+                <b><li>Choisissez la bonne reponse</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Il y a</label>
+                    <select name="A6" class="form-control">
+                        <option selected value="donc">donc</option>
+                        <option value="tant de">tant de</option>
+                        <option value="si bien que">si bien que</option>
+                    </select>
+                    <label>gens, que nous ne verrons pas le film.</label>
+                </div>
+                <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
         </form>    
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.perf4 >= 16) { %>
-            <a class="btn btn-outline-success" href="avanzado-I">Continuar en Intermedio II</a>
-            <br>
-       <% } else { %> 
-            <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
-            <br>
-        <% } %>
+        <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
+        <br>
     <% } %>
 </div>
 

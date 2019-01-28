@@ -1,39 +1,130 @@
 <% include _header %>
 
-<form method="POST" action="/etudiantes/:username">
 <div class="jumbotron">
     <% if(currentUsuario) { %>
         <% if(currentUsuario.role === "admin") { %>
-            <fieldset>
             <h1 class="display-4">Datos del alumno</h1>
-            <b><p class="lead">Nombre completo: </b>
-            <input class="form-control display-5" name="nombre" type="text" value="<%=usuario.name()%>"></p>
-            <b><p class="lead">Nombre de usuario: </b>
-            <input class="form-control display-5" name="usuario" type="text" value="<%= usuario.username%>"></p>
-            <p class="lead"><b>Registrado el día: </b>
-            <input class="form-control display-5" name="registro" type="text" value="<%= usuario.dateRegistrement %>"></p>
-            <p class="lead"><b>Correo electrónico: </b><input class="form-control" name="correo" value="<%=usuario.correo%>"></p>
-            <p class="lead"><b>Teléfono: </b><input class="form-control" name="telefono" value="<%= usuario.telefono %>"></p>
+            <b><p class="lead">Nombre completo: </b><%=usuario.name()%></p>
+            <b><p class="lead">Nombre de usuario: </b><%= usuario.username%></p>
+            <p class="lead"><b>Registrado el día: </b><%= usuario.dateRegistrement %></p>
+            <p class="lead"><b>Correo electrónico: </b><%=usuario.correo%></p>
+            <p class="lead"><b>Teléfono: </b><%= usuario.telefono %></p>
             <% if(usuario.resultado) { %>
-                <p class="lead"><b>Nivel de ubicación:</b><input class="form-control" name="resultado" value="<%= usuario.resultado %>"></p>
+                <p class="lead"><b>Nivel de ubicación: </b><%= usuario.resultado %></p>
                 <% if(usuario.resultado === "Débutante I: Entre Nous I (1, 2 et 3).") { %>
                     <div class="col-4">
-                        <div class="row">
-                            <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/35"></p>
-                        </div>
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
                     </div>
                 <% } %>
                 <% if(usuario.resultado==="Debutante II: Entre Nous I (4, 5 et 6).") { %>
                     <div class="col-4">
-                        <div class="row">
-                            <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/35"></p>
-                            <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/50"></p>
-                        </div>
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
                     </div>
                 <% } %>
-                <button class="btn btn-outline-primary" type="submit">Generar PDF</button>
+                <% if(usuario.resultado==="Debutante III: Entre Nous I (7 et 8).") { %>
+                    <div class="col-6">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Intermédiaire I: Entre Nous II (1, 2 et 3).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Intermédiarie II: Entre Nous II (4, 5 et 6).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                        <p class="lead"><b>Intermédiaire II:</b><input class="form-control" name="inter2" value="<%= usuario.inter2 %>/11"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Intermédiarie III: Entre Nous II (7 et 8).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                        <p class="lead"><b>Intermédiaire II:</b><input class="form-control" name="inter2" value="<%= usuario.inter2 %>/11"></p>
+                        <p class="lead"><b>Intermédiaire III:</b><input class="form-control" name="inter3" value="<%= usuario.inter3 %>/9"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Avancé I: Entre Nous III (1, 2 et 3).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                        <p class="lead"><b>Intermédiaire II:</b><input class="form-control" name="inter2" value="<%= usuario.inter2 %>/11"></p>
+                        <p class="lead"><b>Intermédiaire III:</b><input class="form-control" name="inter3" value="<%= usuario.inter3 %>/9"></p>
+                        <p class="lead"><b>Avancé I:</b><input class="form-control" name="avanc1" value="<%= usuario.avanc1 %>/7"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Avancé II: Entre Nous III (4, 5 et 6).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                        <p class="lead"><b>Intermédiaire II:</b><input class="form-control" name="inter2" value="<%= usuario.inter2 %>/11"></p>
+                        <p class="lead"><b>Intermédiaire III:</b><input class="form-control" name="inter3" value="<%= usuario.inter3 %>/9"></p>
+                        <p class="lead"><b>Avancé I:</b><input class="form-control" name="avanc1" value="<%= usuario.avanc1 %>/7"></p>
+                        <p class="lead"><b>Avancé II:</b><input class="form-control" name="avanc2" value="<%= usuario.avanc2 %>/7"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Perf I: Entre Nous IV (1, 2 et 3).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                        <p class="lead"><b>Intermédiaire II:</b><input class="form-control" name="inter2" value="<%= usuario.inter2 %>/11"></p>
+                        <p class="lead"><b>Intermédiaire III:</b><input class="form-control" name="inter3" value="<%= usuario.inter3 %>/9"></p>
+                        <p class="lead"><b>Avancé I:</b><input class="form-control" name="avanc1" value="<%= usuario.avanc1 %>/7"></p>
+                        <p class="lead"><b>Avancé II:</b><input class="form-control" name="avanc2" value="<%= usuario.avanc2 %>/7"></p>
+                        <p class="lead"><b>Avancé III:</b><input class="form-control" name="avanc3" value="<%= usuario.avanc3 %>/7"></p>
+                        <p class="lead"><b>Perf I:</b><input class="form-control" name="perf1" value="<%= usuario.perf1 %>/7"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Perf II: Entre Nous IV (4, 5 et 6).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I:</b><input class="form-control" name="deb1" value="<%= usuario.deb1 %>/17"></p>
+                        <p class="lead"><b>Débutante II:</b><input class="form-control" name="deb2" value="<%= usuario.deb2 %>/27"></p>
+                        <p class="lead"><b>Débutante III:</b><input class="form-control" name="deb3" value="<%= usuario.deb3 %>/20"></p>
+                        <p class="lead"><b>Intermédiaire I:</b><input class="form-control" name="inter1" value="<%= usuario.inter1 %>/12"></p>
+                        <p class="lead"><b>Intermédiaire II:</b><input class="form-control" name="inter2" value="<%= usuario.inter2 %>/11"></p>
+                        <p class="lead"><b>Intermédiaire III:</b><input class="form-control" name="inter3" value="<%= usuario.inter3 %>/9"></p>
+                        <p class="lead"><b>Avancé I:</b><input class="form-control" name="avanc1" value="<%= usuario.avanc1 %>/7"></p>
+                        <p class="lead"><b>Avancé II:</b><input class="form-control" name="avanc2" value="<%= usuario.avanc2 %>/7"></p>
+                        <p class="lead"><b>Avancé III:</b><input class="form-control" name="avanc3" value="<%= usuario.avanc3 %>/7"></p>
+                        <p class="lead"><b>Perf I:</b><input class="form-control" name="perf1" value="<%= usuario.perf1 %>/7"></p>
+                        <p class="lead"><b>Perf II:</b><input class="form-control" name="perf2" value="<%= usuario.perf2 %>/9"></p>
+                    </div>
+                <% } %>
+                <% if(usuario.resultado==="Perf III: Entre Nous IV (7 et 8).") { %>
+                    <div class="col-4">
+                        <p class="lead"><b>Débutante I: </b><%= usuario.deb1 %>/17</p>
+                        <p class="lead"><b>Débutante II: </b><%= usuario.deb2 %>/27</p>
+                        <p class="lead"><b>Débutante III: </b><%= usuario.deb3 %>/20</p>
+                        <p class="lead"><b>Intermédiaire I: </b><%= usuario.inter1 %>/12</p>
+                        <p class="lead"><b>Intermédiaire II: </b><%= usuario.inter2 %>/11</p>
+                        <p class="lead"><b>Intermédiaire III: </b><%= usuario.inter3 %>/9</p>
+                        <p class="lead"><b>Avancé I: </b><%= usuario.avanc1 %>/7</p>
+                        <p class="lead"><b>Avancé II: </b><%= usuario.avanc2 %>/7</p>
+                        <p class="lead"><b>Avancé III: </b><%= usuario.avanc3 %>/7</p>
+                        <p class="lead"><b>Perf I: </b><%= usuario.perf1 %>/4</p>
+                        <p class="lead"><b>Perf II: </b><%= usuario.perf2 %>/10</p>
+                        <p class="lead"><b>Perf III: </b><%= usuario.perf3 %>/11</p>
+                    </div>
+                <% } %>
             <% } %>
-            </fieldset>
         <% } else { %>
             <h1 class="display-5" name="nombre"><%=usuario.name()%></h1>
             <p class="lead"><b>Registrado el día: </b><%= usuario.dateRegistrement %></p>
@@ -45,7 +136,5 @@
         <% } %>
     <% } %>
 </div>
-
-</form>
 
 <% include _footer %>

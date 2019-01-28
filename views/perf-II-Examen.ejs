@@ -1,18 +1,96 @@
 <% include _header %>
 
 <div class="container" id="marginStudent">
-    <h4>Perfecto IV</h4>
-    <% if(!currentUsuario.perf4) { %> 
-        <form action="/perfecto-IV" method="POST">
+    <h4>Perfecto II</h4>
+    <% if(!currentUsuario.perf2) { %> 
+        <form action="/perf-II" method="POST">
             <ol>
-                <b><li></li></b>
+                <b><li>Choisissez entre afin de/afin que ou pour/pour que</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Je te prête ma voiture</label>
+                    <select name="A1" class="form-control">
+                        <option selected value="afin que">afin que</option>
+                        <option value="afin de">afin de</option>
+                    </select>
+                    <label>tu puisses venir ce soir.</label>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Tu me passes tes clefs</label>
+                    <select name="B1" class="form-control">
+                        <option selected value="pour">pour</option>
+                        <option value="pour que">pour que</option>
+                    </select>
+                    <label>aller acheter le pain!</label>
+                </div>
+                <br>
+                <b><li>Transformez la phrase a la forme negative: Ne ...Ni ni/ne que</li></b>
+                <br>
+                <label>Cette pharmacie vend uniquement des médicaments génériques.</label>
+                <input type="text" class="form-control col-6" name="A2">
+                <br>
+                <b><li>Conjuguez les verbes a l'infinit ou au subjonctif present</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Marion je suis très heureux que tu</label>
+                    <input type="text" name="A3" class="form-control" placeholder="Penser">
+                    <label>à moi aujourd'hui.</label>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <label>Elle est contente de</label>
+                    <input type="text" name="B3" class="form-control" placeholder="Pouvoir">
+                    <label>connaître ta soeur.</label>
+                </div>
+                <br>
+                <b><li>Accordez les participes passes si besoin</li></b>
+                <br>
+                <div class="form-inline">
+                    <label>Hier, nous avons vu</label>
+                    <input type="text" class="form-control col-1" name="A4">
+                    <label>Pierre et il ne nous a pas reconnu</label>
+                    <input type="text" class="form-control col-1" name="B4">
+                </div>
+                <br>
+                <b><li>Transformez les phrases suivantes</li></b>
+                <br>
+                <label>Nous devons protéger la planète.</label>
+                <br>
+                <div class="form-inline">
+                    <label>Il est indispensable que</label>
+                    <input type="text" class="form-control col-5" name="A5">
+                </div>
+                <br>
+                <b><li>Choisissez le bon pronom indefini</li></b>
+                <br>
+                <div class="form-inline">
+                    <select name="A6" class="form-control">
+                        <option selected value="chacun">Chacun</option>
+                        <option value="toutes">Toutes</option>
+                        <option value="plusieurs">Plusieurs</option>
+                    </select>
+                    <label>villes proposent des zones de compost publiques.</label>
+                </div>
+                <br>
+                <b><li>Choisissez la bonne expression de cause</li></b>
+                <br>
+                <div class="form-inline">
+                    <select name="A7" class="form-control">
+                        <option selected value="a cause de">A cause de</option>
+                        <option value="grâce à">Grâce à</option>
+                        <option value="sous">Sous</option>
+                    </select>
+                    <label>prétexte la nouvelle réglementation on a pu recycler 3 tonnes de plastique.</label>
+                </div>
+                <br>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
         </form>    
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.perf4 >= 16) { %>
-            <a class="btn btn-outline-success" href="avanzado-I">Continuar en Intermedio II</a>
+        <% if(currentUsuario.perf2 >= 7) { %>
+            <a class="btn btn-outline-success" href="perf-III">Continuar en Perfecto III</a>
             <br>
        <% } else { %> 
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>

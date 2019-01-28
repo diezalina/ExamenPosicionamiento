@@ -180,6 +180,28 @@ router.post("/debutante-I", ensureAuthenticated,(req,res,next) => {
     req.usuario.deb1 = deb1;
     if(deb1 < 12){
         req.usuario.resultado = "Débutante I: Entre Nous I (1, 2 et 3).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 410);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -316,8 +338,31 @@ router.post("/debutante-II", ensureAuthenticated,(req, res) => {
     }
     console.log(deb2);
     req.usuario.deb2 = deb2;
-    if(deb2 < 17){
+    if(deb2 < 19){
         req.usuario.resultado = "Débutante II: Entre Nous I (4, 5 et 6).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 425);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -358,7 +403,6 @@ router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
     var C6 = Boolean(req.body.C6);
     var A8 = req.body.A8.toLowerCase();
     var B8 = req.body.B8.toLowerCase();
-    var C8 = req.body.C8.toLowerCase();
     var A9 = req.body.A9;
     var B10 = req.body.B10.toLowerCase();
     var A11 = req.body.A11.toLowerCase();
@@ -366,7 +410,7 @@ router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
     if(B1 === "le bras"){
         deb3++;
     }
-    if(C1 === "les dents"){
+    if(C1 === "la main"){
         deb3++;
     }
     if(B2 === "C"){
@@ -427,6 +471,30 @@ router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
     req.usuario.deb3 = deb3;
     if(deb3 < 14){
         req.usuario.resultado = "Débutante III: Entre Nous I (7 et 8).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 440);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -500,8 +568,33 @@ router.post("/intermedio-I",ensureAuthenticated,(req,res,next) => {
     }
     console.log(int1);
     req.usuario.inter1 = int1;
-    if(int1 < 7){
+    if(int1 < 8){
         req.usuario.resultado = "Intermédiaire I: Entre Nous II (1, 2 et 3).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 455);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -573,6 +666,32 @@ router.post("/intermedio-II",ensureAuthenticated,(req,res,next) => {
     req.usuario.inter2 = inter2;
     if(inter2 < 7){
         req.usuario.resultado = "Intermédiaire I: Entre Nous II (4, 5 et 6).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 470);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -595,48 +714,22 @@ router.get("/intermedio-III",(req,res)=>{
 
 router.post("/intermedio-III",ensureAuthenticated,(req,res,next) => {
     var A1 = req.body.A1.toLowerCase();
-    var B1 = req.body.B1.toLowerCase();
     var C1 = req.body.C1.toLowerCase();
     var A2 = req.body.A2;
-    var B2 = req.body.B2;
-    var A3 = req.body.A3;
-    var B3 = req.body.B3;
-    var C3 = req.body.C3;
-    var D3 = req.body.D3;
     var A4 = req.body.A4.toLowerCase();
     var B4 = req.body.B4.toLowerCase();
     var A5 = req.body.A5.toLowerCase();
     var B5 = req.body.B5.toLowerCase();
     var A6 = req.body.A6;
-    var B6 = req.body.B6;
     var A7 = req.body.A7;
-    var B7 = req.body.B7;
     var int3 = 0;
     if(A1 === "il ne faut pas fumer"){
-        int3++;
-    }
-    if(B1 === "tu ne dois pas entrer"){
         int3++;
     }
     if(C1 === "vous devez respecter l'espace"){
         int3++;
     }
     if(A2 === "celle-ci"){
-        int3++;
-    }
-    if(B2 === "ceux-ci"){
-        int3++;
-    }
-    if(A3 === "repas"){
-        int3++;
-    }
-    if(B3 === "A"){
-        int3++;
-    }
-    if(C3 === "semestriel"){
-        int3++;
-    }
-    if(D3 === "B"){
         int3++;
     }
     if(A4 === "agréablement"){
@@ -654,19 +747,40 @@ router.post("/intermedio-III",ensureAuthenticated,(req,res,next) => {
     if(A6 === "B"){
         int3++;
     }
-    if(B6 === "B"){
-        int3++;
-    }
     if(A7 === "B"){
-        int3++;
-    }
-    if(B7 === "A"){
         int3++;
     }
     console.log(int3);
     req.usuario.inter3 = int3;
     if(int3 < 6){
         req.usuario.resultado = "Intermédiaire I: Entre Nous II (7 et 8).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 485);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -721,6 +835,34 @@ router.post("/avanzado-I", (req, res, next) => {
     req.usuario.avanc1 = avanc1;
     if(avanc1 < 5){
         req.usuario.resultado = "Avancé I: Entre Nous III (1, 2 et 3).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455)
+            .text('Avancé I:' + req.usuario.avanc1 + '/7', 50, 470);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 500);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -769,6 +911,35 @@ router.post("/avanzado-II", (req, res, next) => {
     req.usuario.avanc2 = avanc2;
     if(avanc2 < 5){
         req.usuario.resultado = "Avancé II: Entre Nous III (4, 5 et 6).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455)
+            .text('Avancé I:' + req.usuario.avanc1 + '/7', 50, 470)
+            .text('Avancé II:' + req.usuario.avanc2 + '/7', 50, 485);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 515);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -817,13 +988,43 @@ router.post("/avanzado-III", (req, res, next) => {
     req.usuario.avanc3 = avanc3;
     if(avanc3 < 5){
         req.usuario.resultado = "Avancé III: Entre Nous III (7 et 8).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455)
+            .text('Avancé I:' + req.usuario.avanc1 + '/7', 50, 470)
+            .text('Avancé II:' + req.usuario.avanc2 + '/7', 50, 485)
+            .text('Avancé III:' + req.usuario.avanc3 + '/7', 50, 500);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 530);
+        
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
             next(err);
             return;
         }
-        res.redirect("/avanzado-II-resultado");
+        res.redirect("/avanzado-III-resultado");
     });
 });
 
@@ -843,13 +1044,255 @@ router.get("/perf-I", (req, res, next) => {
     res.render("perf-I-examen");
 });
 
+router.post("/perf-I", (req, res, next) => {
+    var A1 = req.body.A1.toLowerCase();
+    var A2 = req.body.A2.toLowerCase();
+    var A3 = req.body.A3.toLowerCase();
+    var B3 = req.body.B3.toLowerCase();
+    var perf1 = 0;
+    if(A1 === "lequel"){
+        perf1++;
+    }
+    if(A2 === "aurons compris"){
+        perf1++;
+    }
+    if(A3 === "d'utiliser cette plante"){
+        perf1++;
+    }
+    if(B3 === "ça allait guérir ma toux"){
+        perf1++;
+    }
+    console.log(perf1);
+    req.usuario.perf1 = perf1;
+    if(perf1 < 2){
+        req.usuario.resultado = "Perf I: Entre Nous IV (1, 2 et 3).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455)
+            .text('Avancé I:' + req.usuario.avanc1 + '/7', 50, 470)
+            .text('Avancé II:' + req.usuario.avanc2 + '/7', 50, 485)
+            .text('Avancé III:' + req.usuario.avanc3 + '/7', 50, 500)
+            .text('Perf I:' + req.usuario.perf1 + '/4', 50, 515);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 545);
+        
+        doc.end();
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/perf-I-resultado");
+    });
+});
+
 router.get("/perf-II", (req, res, next) => {
     res.render("perf-II-examen");
+});
+
+router.post("/perf-II", (req, res, next) => {
+    var A1 = req.body.A1;
+    var B1 = req.body.B1;
+    var A2 = req.body.A2.toLowerCase();
+    var A3 = req.body.A3.toLowerCase();
+    var B3 = req.body.B3.toLowerCase();
+    var A4 = req.body.A4.toLowerCase();
+    var B4 = req.body.B4.toLowerCase();
+    var A5 = req.body.A5.toLowerCase();
+    var A6 = req.body.A6;
+    var A7 = req.body.A7;
+    var perf2 = 0;
+    if(A1 === "afin que"){
+        perf2++;
+    }
+    if(B1 === "pour"){
+        perf2++;
+    }
+    if(A2 === "cette pharmacie ne vend que des médicaments génériques"){
+        perf2++;
+    }
+    if(A3 === ""){
+        perf2++;
+    }
+    if(B3 === ""){
+        perf2++;
+    }
+    if(A4 === ""){
+        perf2++;
+    }
+    if(B4 === "s"){
+        perf2++;
+    }
+    if(A5 === "nous protégions la planète"){
+        perf2++;
+    }
+    if(A6 === "plusieurs"){
+        perf2++;
+    }
+    if(A7 === "grâce à"){
+        perf2++;
+    }
+    console.log(perf2);
+    req.usuario.perf2 = perf2;
+    if(perf2 < 7){
+        req.usuario.resultado = "Perf II: Entre Nous IV (4, 5 et 6).";
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455)
+            .text('Avancé I:' + req.usuario.avanc1 + '/7', 50, 470)
+            .text('Avancé II:' + req.usuario.avanc2 + '/7', 50, 485)
+            .text('Avancé III:' + req.usuario.avanc3 + '/7', 50, 500)
+            .text('Perf I:' + req.usuario.perf1 + '/4', 50, 515)
+            .text('Perf II:' + req.usuario.perf2 + '/10', 50, 530);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 560);
+        
+        doc.end();
+    }
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/perf-II-resultado");
+    });
 });
 
 
 router.get("/perf-III", (req, res, next) => {
     res.render("perf-III-examen");
+});
+
+router.post("/perf-III", (req, res, next) => {
+    var A1 = req.body.A1;
+    var A2 = req.body.A2;
+    var A3 = req.body.A3.toLowerCase();
+    var A4 = req.body.A4;
+    var B4 = req.body.B4;
+    var C4 = req.body.C4;
+    var D4 = req.body.D4;
+    var E4 = req.body.E4;
+    var A5 = req.body.A5.toLowerCase();
+    var B5 = req.body.B5.toLowerCase();
+    var A6 = req.body.A6;
+    var perf3 = 0;
+    if(A1 === "puisque"){
+        perf3++;
+    }
+    if(A2 === "dés que"){
+        perf3++;
+    }
+    if(A3 === "ait pu"){
+        perf3++;
+    }
+    if(A4 === "alla"){
+        perf3++;
+    }
+    if(B4 === "fit"){
+        perf3++;
+    }
+    if(C4 === "revint"){
+        perf3++;
+    }
+    if(D4 === "vit"){
+        perf3++;
+    }
+    if(E4 === "s'approcha"){
+        perf3++;
+    }
+    if(A5 === "le jour où"){
+        perf3++;
+    }
+    if(B5 === "après que"){
+        perf3++;
+    }
+    if(A6 === "tant de"){
+        perf3++;
+    }
+    console.log(perf3);
+    req.usuario.perf3 = perf3;
+    req.usuario.resultado = "Perf III: Entre Nous IV (7 et 8).";
+    doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.image('public/pdf-logo.jpg', 0, 0)
+            .fontSize(24)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.nombre + ' '+ req.usuario.a_paterno + ' ' + req.usuario.a_materno, 50, 230);
+
+        doc.fontSize(17)
+            .font('public/fonts/ariali.ttf')
+            .text('Les résultats', 50, 300);
+
+        doc.fontSize(12)
+            .font('public/fonts/verdana.ttf')
+            .text('Correo electrónico: ' + req.usuario.correo, 50, 325)
+            .text('Télefono: ' + req.usuario.telefono, 50, 340)
+            .text('A continuación damos a conocer los resultados del alumno/a:', 50, 355)
+            .text('Débutante I:' + req.usuario.deb1 + '/17', 50, 380)
+            .text('Débutante II:' + req.usuario.deb2 + '/27', 50, 395)
+            .text('Débutante III:' + req.usuario.deb3 + '/20', 50 , 410)
+            .text('Intermédiaire I:' + req.usuario.inter1 + '/12', 50, 425)
+            .text('Intermédiaire II:' + req.usuario.inter2 + '/11', 50, 440)
+            .text('Intermédiaire III:' + req.usuario.inter3 + '/9', 50, 455)
+            .text('Avancé I:' + req.usuario.avanc1 + '/7', 50, 470)
+            .text('Avancé II:' + req.usuario.avanc2 + '/7', 50, 485)
+            .text('Avancé III:' + req.usuario.avanc3 + '/7', 50, 500)
+            .text('Perf I:' + req.usuario.perf1 + '/4', 50, 515)
+            .text('Perf II:' + req.usuario.perf2 + '/10', 50, 530)
+            .text('Perf III:' + req.usuario.perf3 + '/11', 50, 545);
+        
+        doc.fontSize(18)
+            .font('public/fonts/ariali.ttf')
+            .text(req.usuario.resultado, 75, 610);
+        
+        doc.end();
+    req.usuario.save((err) => {
+        if(err){
+            next(err);
+            return;
+        }
+        res.redirect("/perf-III-resultado");
+    });
 });
 
 router.get("/perf-I-resultado", (req, res, next) => {
@@ -890,40 +1333,6 @@ router.get("/etudiantes/:username",(req, res,next) =>{
     });
 });
 
-//sacar PDF del perfil
-router.post("/etudiantes/:username", (req, res, next) => {
-
-    var nombre = req.body.nombre;
-    var correo = req.body.correo;
-    var resultado = req.body.resultado;
-    var telefono = req.body.telefono;
-    var usuario = req.body.usuario;
-    //console.log(usuario);
-    //console.log(nombre);
-    doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + usuario + '-resultado' +'.pdf'));    
-    doc.image('public/pdf-logo.jpg', 0, 0)
-        .fontSize(24)
-        .font('public/fonts/ariali.ttf')
-        .text('¡Félicitations!', 50, 230);
-
-    doc.fontSize(16)
-       .font('public/fonts/ariali.ttf')
-       .text(nombre, 50, 300);
-
-    doc.fontSize(12)
-        .font('public/fonts/verdana.ttf')
-        .text('Correo electrónico: ' + correo, 50, 325)
-        .text('Télefono: ' + telefono, 50, 340)
-        .text('A través del presente documento, nos alegra comunicarle sus resultados en el examen de ubicación de la lengua francesa en nuestra institución.', 50, 255)
-        .text('A continuación damos a conocer los resultados del alumno/a:', 50, 285);
-    
-    doc.fontSize(18)
-        .font('public/fonts/ariali.ttf')
-        .text(resultado, 150, 370);
-    
-    doc.end();
-    
-});
 
 //acceder a examen a través del menú
 router.get("/inicio-examen",(req, res) => {

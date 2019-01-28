@@ -6,9 +6,9 @@
         <div class="form-inline">
             <label><b>Resultado: </b></label>
             <label> <%= currentUsuario.deb2 %></label>
-            <label>/25</label>
+            <label>/27</label>
         </div>
-        <% if(currentUsuario.deb2 >= 17) {%> 
+        <% if(currentUsuario.deb2 >= 19) {%> 
             <a class="btn btn-outline-success" href="/debutante-III">Continuar</a>
         <% } else {%>
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Finalizar</a>

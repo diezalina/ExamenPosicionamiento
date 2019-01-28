@@ -6,10 +6,10 @@
         <div class="form-inline">
             <label><b>Resultado: </b></label>
             <label> <%= currentUsuario.perf2 %></label>
-            <label>/8</label>
+            <label>/10</label>
         </div>
-        <% if(currentUsuario.perf2 >= 5) {%> 
-            <a class="btn btn-outline-success" href="/perfecto-III">Continuar</a>
+        <% if(currentUsuario.perf2 >= 7) {%> 
+            <a class="btn btn-outline-success" href="/perf-III">Continuar</a>
         <% } else {%>
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Finalizar</a>
         <% } %>

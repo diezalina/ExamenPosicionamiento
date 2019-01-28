@@ -26,7 +26,6 @@ var usuarioSchema = mongoose.Schema({
     perf1: { type: Number },
     perf2: { type: Number },
     perf3: { type: Number },
-    perf4: { type: Number },
     resultado: { type: String }
 });
 

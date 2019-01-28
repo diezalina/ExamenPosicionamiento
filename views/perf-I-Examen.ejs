@@ -1,9 +1,9 @@
 <% include _header %>
 
 <div class="container" id="marginStudent">
-    <h4>Perfecto IV</h4>
-    <% if(!currentUsuario.perf4) { %> 
-        <form action="/perfecto-IV" method="POST">
+    <h4>Perfecto I</h4>
+    <% if(!currentUsuario.perf1) { %> 
+        <form action="/perf-I" method="POST">
             <ol>
                 <b><li>Écrivez le pronom interrogatif qui convient</li></b>
                 <br>
@@ -11,21 +11,31 @@
                     <input type="text" name="A1" class="form-control">
                     <label>tu vas acheter? ce pantalon ou l'autre?</label>
                 </div>
+                <br>
                 <b><li>Conjuguez les verbes au futur antérieur</li></b>
+                <br>
                 <div class="form-inline">
                     <label>Quand nous</label>
-                    <input type="text" class="form-control" placeholder="Comprendre" name="B2">
+                    <input type="text" class="form-control" placeholder="Comprendre" name="A2">
                     <label>l'importance du recyclage, la Terre sera plus propre.</label>
                 </div>
                 <br>
-                <b><li></li></b>
+                <b><li>Transformez les phrases au discours indirect</li></b>
+                <br>
+                <label>Utilise cette plante, ça va guérir ta toux.</label>
+                <div class="form-inline">
+                    <label>Elle m'a dit</label>
+                    <input type="text" class="form-control" name="A3">
+                    <label>et que</label>
+                    <input type="text" class="form-control" name="B3">
+                </div>
             </ol>
             <input type="submit" value="Siguiente" class="btn btn-success btn-lg">
         </form>    
     <% } else { %>
         <h1>Ya presentaste este nivel</h1>
-        <% if(currentUsuario.perf4 >= 16) { %>
-            <a class="btn btn-outline-success" href="avanzado-I">Continuar en Intermedio II</a>
+        <% if(currentUsuario.perf1 >= 2) { %>
+            <a class="btn btn-outline-success" href="perf-II">Continuar en Perf II</a>
             <br>
        <% } else { %> 
             <a class="btn btn-outline-danger" href="/etudiantes/<%= currentUsuario.username %>">Resultado</a>
