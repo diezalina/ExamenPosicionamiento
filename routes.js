@@ -164,7 +164,7 @@ router.post("/debutante-I", ensureAuthenticated,(req,res,next) => {
     if(D5 === "aux"){
         deb1++;
     }
-    if(A8 === "à côte dû"){
+    if(A8 === "à côte du"){
         deb1++;
     }
     if(B8 === "à droite"){
