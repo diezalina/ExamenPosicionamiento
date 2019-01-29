@@ -1041,7 +1041,7 @@ router.get("/avanzado-III-resultado", (req, res, next) => {
 });
 
 router.get("/perf-I", (req, res, next) => {
-    res.render("perf-I-examen");
+    res.render("perf-I-Examen");
 });
 
 router.post("/perf-I", (req, res, next) => {
