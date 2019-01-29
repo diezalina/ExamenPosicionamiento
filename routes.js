@@ -1113,7 +1113,7 @@ router.get("/perf-I-resultado", (req, res, next) => {
 
 
 router.get("/perf-II", (req, res, next) => {
-    res.render("perf-II-examen");
+    res.render("perf-II-Examen");
 });
 
 router.post("/perf-II", (req, res, next) => {
@@ -1209,7 +1209,7 @@ router.get("/perf-II-resultado", (req, res, next) => {
 });
 
 router.get("/perf-III", (req, res, next) => {
-    res.render("perf-III-examen");
+    res.render("perf-III-Examen");
 });
 
 router.post("/perf-III", (req, res, next) => {
