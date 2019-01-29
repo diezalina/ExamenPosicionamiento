@@ -873,6 +873,10 @@ router.post("/avanzado-I", (req, res, next) => {
     });
 });
 
+router.get("/avanzado-I-resultado",(req, res, next) => {
+    res.render("avanzado-I-Resultado");
+});
+
 router.get("/avanzado-II", (req, res, next) => {
     res.render("avanzado-II-Examen");
 });
@@ -948,6 +952,10 @@ router.post("/avanzado-II", (req, res, next) => {
         }
         res.redirect("/avanzado-II-resultado");
     });
+});
+
+router.get("/avanzado-II-resultado", (req, res, next) => {
+    res.render("avanzado-II-Resultado");
 });
 
 router.get("/avanzado-III", (req, res, next) => {
@@ -1028,14 +1036,6 @@ router.post("/avanzado-III", (req, res, next) => {
     });
 });
 
-router.get("/avanzado-I-resultado",(req, res, next) => {
-    res.render("avanzado-I-Resultado");
-});
-
-router.get("/avanzado-II-resultado", (req, res, next) => {
-    res.render("avanzado-II-Resultado");
-});
-
 router.get("/avanzado-III-resultado", (req, res, next) => {
     res.render("avanzado-III-Resultado");
 });
@@ -1106,6 +1106,11 @@ router.post("/perf-I", (req, res, next) => {
         res.redirect("/perf-I-resultado");
     });
 });
+
+router.get("/perf-I-resultado", (req, res, next) => {
+    res.render("perf-I-resultado");
+});
+
 
 router.get("/perf-II", (req, res, next) => {
     res.render("perf-II-examen");
@@ -1199,6 +1204,9 @@ router.post("/perf-II", (req, res, next) => {
     });
 });
 
+router.get("/perf-II-resultado", (req, res, next) => {
+    res.render("perf-II-resultado");
+});
 
 router.get("/perf-III", (req, res, next) => {
     res.render("perf-III-examen");
@@ -1293,14 +1301,6 @@ router.post("/perf-III", (req, res, next) => {
         }
         res.redirect("/perf-III-resultado");
     });
-});
-
-router.get("/perf-I-resultado", (req, res, next) => {
-    res.render("perf-I-resultado");
-});
-
-router.get("/perf-II-resultado", (req, res, next) => {
-    res.render("perf-II-resultado");
 });
 
 router.get("/perf-III-resultado", (req, res, next) => {
