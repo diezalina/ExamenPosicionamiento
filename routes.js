@@ -951,7 +951,7 @@ router.post("/avanzado-II", (req, res, next) => {
 });
 
 router.get("/avanzado-III", (req, res, next) => {
-    res.render("avanzado-III-Examen");
+    res.render("avanzado-III-examen");
 });
 
 router.post("/avanzado-III", (req, res, next) => {
@@ -1024,7 +1024,7 @@ router.post("/avanzado-III", (req, res, next) => {
             next(err);
             return;
         }
-        res.redirect("/avanzado-III-resultado");
+        res.redirect("/avanzado-III-Resultado");
     });
 });
 
@@ -1307,10 +1307,6 @@ router.get("/perf-III-resultado", (req, res, next) => {
     res.render("perf-III-resultado");
 });
 
-
-//---------------------------------------//
-//           PDF - LISTADO               //
-//---------------------------------------//
 //listado de estudiantes
 router.get("/etudiantes", (req, res, next) =>{
     Usuario.find()
