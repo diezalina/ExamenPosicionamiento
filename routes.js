@@ -1228,7 +1228,7 @@ router.post("/perf-III", (req, res, next) => {
     if(A1 === "puisque"){
         perf3++;
     }
-    if(A2 === "dés que"){
+    if(A2 === "dès que"){
         perf3++;
     }
     if(A3 === "ait pu"){
