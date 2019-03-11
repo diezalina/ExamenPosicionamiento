@@ -19,9 +19,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <% if(usuario.resultado) { %> 
-                            <a class="btn btn-outline-danger" href="/docs/<%= usuario.username %>-resultado.pdf" download="<%= usuario.a_paterno %>-<%= usuario.nombre %>-resultado.pdf">Descargar resultados</a>
-                        <% } else { %>
+                        <% if(!usuario.resultado) {%>
                             <button class="btn btn-outline-warning" href="#">No hay resultados aún.</button>
                         <% } %>
                     </div>
