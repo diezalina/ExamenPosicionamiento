@@ -180,7 +180,7 @@ router.post("/debutante-I", ensureAuthenticated,(req,res,next) => {
     req.usuario.deb1 = deb1;
     if(deb1 < 12){
         req.usuario.resultado = "Débutante I: Entre Nous I (1, 2 et 3).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -201,7 +201,7 @@ router.post("/debutante-I", ensureAuthenticated,(req,res,next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 410);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -340,7 +340,7 @@ router.post("/debutante-II", ensureAuthenticated,(req, res) => {
     req.usuario.deb2 = deb2;
     if(deb2 < 19){
         req.usuario.resultado = "Débutante II: Entre Nous I (4, 5 et 6).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -362,7 +362,7 @@ router.post("/debutante-II", ensureAuthenticated,(req, res) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 425);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -471,7 +471,7 @@ router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
     req.usuario.deb3 = deb3;
     if(deb3 < 14){
         req.usuario.resultado = "Débutante III: Entre Nous I (7 et 8).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -494,7 +494,7 @@ router.post("/debutante-III",ensureAuthenticated,(req,res,next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 440);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -570,7 +570,7 @@ router.post("/intermedio-I",ensureAuthenticated,(req,res,next) => {
     req.usuario.inter1 = int1;
     if(int1 < 8){
         req.usuario.resultado = "Intermédiaire I: Entre Nous II (1, 2 et 3).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -594,7 +594,7 @@ router.post("/intermedio-I",ensureAuthenticated,(req,res,next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 455);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -666,7 +666,7 @@ router.post("/intermedio-II",ensureAuthenticated,(req,res,next) => {
     req.usuario.inter2 = inter2;
     if(inter2 < 7){
         req.usuario.resultado = "Intermédiaire I: Entre Nous II (4, 5 et 6).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -691,7 +691,7 @@ router.post("/intermedio-II",ensureAuthenticated,(req,res,next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 470);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -754,7 +754,7 @@ router.post("/intermedio-III",ensureAuthenticated,(req,res,next) => {
     req.usuario.inter3 = int3;
     if(int3 < 6){
         req.usuario.resultado = "Intermédiaire I: Entre Nous II (7 et 8).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -780,7 +780,7 @@ router.post("/intermedio-III",ensureAuthenticated,(req,res,next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 485);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -835,7 +835,7 @@ router.post("/avanzado-I", (req, res, next) => {
     req.usuario.avanc1 = avanc1;
     if(avanc1 < 5){
         req.usuario.resultado = "Avancé I: Entre Nous III (1, 2 et 3).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -862,7 +862,7 @@ router.post("/avanzado-I", (req, res, next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 500);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -915,7 +915,7 @@ router.post("/avanzado-II", (req, res, next) => {
     req.usuario.avanc2 = avanc2;
     if(avanc2 < 5){
         req.usuario.resultado = "Avancé II: Entre Nous III (4, 5 et 6).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -943,7 +943,7 @@ router.post("/avanzado-II", (req, res, next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 515);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -996,7 +996,7 @@ router.post("/avanzado-III", (req, res, next) => {
     req.usuario.avanc3 = avanc3;
     if(avanc3 < 5){
         req.usuario.resultado = "Avancé III: Entre Nous III (7 et 8).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -1025,7 +1025,7 @@ router.post("/avanzado-III", (req, res, next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 530);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -1066,7 +1066,7 @@ router.post("/perf-I", (req, res, next) => {
     req.usuario.perf1 = perf1;
     if(perf1 < 2){
         req.usuario.resultado = "Perf I: Entre Nous IV (1, 2 et 3).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -1096,7 +1096,7 @@ router.post("/perf-I", (req, res, next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 545);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -1162,7 +1162,7 @@ router.post("/perf-II", (req, res, next) => {
     req.usuario.perf2 = perf2;
     if(perf2 < 7){
         req.usuario.resultado = "Perf II: Entre Nous IV (4, 5 et 6).";
-        /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+        doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -1193,7 +1193,7 @@ router.post("/perf-II", (req, res, next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 560);
         
-        doc.end();*/
+        doc.end();
     }
     req.usuario.save((err) => {
         if(err){
@@ -1261,7 +1261,7 @@ router.post("/perf-III", (req, res, next) => {
     console.log(perf3);
     req.usuario.perf3 = perf3;
     req.usuario.resultado = "Perf III: Entre Nous IV (7 et 8).";
-    /*doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
+    doc.pipe(fs.createWriteStream(__dirname + '/PDF/' + req.usuario.username + '-resultado' +'.pdf'));    
         doc.image('public/pdf-logo.jpg', 0, 0)
             .fontSize(24)
             .font('public/fonts/ariali.ttf')
@@ -1293,7 +1293,7 @@ router.post("/perf-III", (req, res, next) => {
             .font('public/fonts/ariali.ttf')
             .text(req.usuario.resultado, 75, 610);
         
-        doc.end();*/
+        doc.end();
     req.usuario.save((err) => {
         if(err){
             next(err);
