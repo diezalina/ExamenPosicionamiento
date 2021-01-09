@@ -15,10 +15,7 @@ var routes = require("./routes");
 var passportsetup = require("./passportsetup");
 var app = express();
 
-//mongoose.connect("mongodb://alianzaAdmin:4l14nz42019@200.23.125.14:27017/examen-posicionamiento");
-mongoose.connect("mongodb://10am:alina10@ds261440.mlab.com:61440/examen-posicionamiento");
-//mongoose.connect("mongodb://localhost:4l14nz42019/examen-posicionamiento");
-
+mongoose.connect("mongodb+srv://10am:alina10@examen-posicionamiento.5vnb3.mongodb.net/examen-posicionamiento?retryWrites=true&w=majority");
 
 var publicScript = path.join(__dirname,'scripts');
 app.use('/scripts', express.static(publicScript));
